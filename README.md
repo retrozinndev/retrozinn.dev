@@ -6,4 +6,5 @@
 </p>
 
 
-#### **You can find me in**: [GitHub](https://github.com/retrozinndev) · [X/Twitter]() · [Matrix]()
+#### **You can find me in**: [GitHub](https://github.com/retrozinndev) · [GitLab](https://gitlab.com/retrozinndev) · [X/Twitter](https://x.com/retrozinndev) · [Matrix](https://matrix.to/#/@retrozinndev:matrix.org)
+**Discord**: retrozinndev
