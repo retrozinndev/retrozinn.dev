@@ -31,5 +31,7 @@ I'm a Computer enthusiast that's learning programming languages! Also I'm Note S
  <img src="https://img.shields.io/badge/Fedora-294172?style=for-the-badge&logo=fedora&logoColor=white" alt="Fedora Workstation Linux 39">
 </a>
 
-#### **💬 You can find me in**: [GitHub](https://github.com/retrozinndev) · [GitLab](https://gitlab.com/retrozinndev) · [X/Twitter](https://x.com/retrozinndev) · [Matrix](https://matrix.to/#/@retrozinndev:matrix.org) · [Reddit](https://www.reddit.com/user/Much_Clue7037) · [Mail](mailto:joaovodias@gmail.com)
+#### **💬 You can find me in**
+[GitHub](https://github.com/retrozinndev) · [GitLab](https://gitlab.com/retrozinndev) · [X/Twitter](https://x.com/retrozinndev) · [Matrix](https://matrix.to/#/@retrozinndev:matrix.org) · [Reddit](https://www.reddit.com/user/Much_Clue7037) · [Mail](mailto:joaovodias@gmail.com)
+
 **Discord**: retrozinndev
