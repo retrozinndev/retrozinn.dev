@@ -1,4 +1,3 @@
-# Retrozinn
 > ⚠️ Site stage: Development
 
 <p>
