@@ -4,7 +4,7 @@ I'm a Computer enthusiast that's learning programming languages! Also I'm Note S
 
 **Pronouns**: he/him <br>
 **Country**: Brazil <br>
-**Languages**: en-US, pt-BR
+**Languages**: Português(Brasil), English
 <br>
 
 #### 🏢 Organization
