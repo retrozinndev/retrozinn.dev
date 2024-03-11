@@ -1,0 +1,80 @@
+
+body.dark {
+    color-scheme: dark;
+    color: whitesmoke;
+    font-family: sans-serif;
+    background-color: rgb(30, 30, 31); 
+}
+
+body.white {
+    color-scheme: white;
+    color: black;
+    font-family: sans-serif;
+    background-color: rgb(230, 247, 239);
+}
+
+header.dark {
+    color-scheme: dark;
+    color: whitesmoke;
+    background-color: rgb(60, 60, 60);
+}
+
+header.white {
+    color-scheme: white;
+    color: black;
+    background-color: white;
+}
+
+div {
+    margin: auto;
+}
+
+.italic {
+    font-weight: italic;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+strong {
+    font-style: bold;
+}
+h1 {
+    font-size: 20.5px;
+}
+
+h2 {
+    font-size: 16.5px;
+}
+
+h3 {
+    font-size: 14px;
+}
+
+.usrname h1 div {
+    color: rgb(48, 148, 106);
+}
+
+.characteristics {
+    font-size: 12px;
+}
+
+.about {
+    font-style: bold;
+    font-size: 16px;
+}
+
+.links div span {
+    box-sizing: content-box;
+    font-size: 8px;
+    background-color: rgb(48, 148, 106);
+}
+
+footer {
+    position: fixed;
+    bottom: 10px;
+    right: 2px;
+    text-align: center;
+    width: 100%;
+}
