@@ -1,9 +1,17 @@
 
 header {
-    overflow: hidden;
+    overflow: scroll;
     color-scheme: dark;
     color: white;
     background-color: rgb(60, 60, 60);
+}
+
+main {
+    overflow: scroll;
+    color-scheme: dark;
+    color: white;
+    background-color: rgb(30, 30, 31);
+    margin: 16px;
 }
 
 body {
@@ -14,8 +22,7 @@ body {
     background-color: rgb(30, 30, 31);
     margin: auto;
     width: 100%;
-    left: 10px;
-    max-height: max-content;
+    left: 16px;
 }
 
 h1 {
@@ -29,14 +36,7 @@ h2 {
 h3 {
     font-size: 15.5px;
 }
-/*
-div {
-    margin: auto;
-    position: fixed;
-    top: 0px;
-    border-spacing: 90px;
-}
-*/
+
 a {
     color: rgb(194, 75, 46);
 }
@@ -94,14 +94,7 @@ links {
     background-color: rgb(68, 55, 55);
     border-spacing: 32px;
 }
-/*
-img {
-    width: 32px;
-    height: 32px;
-    top: 0px;
-    margin: auto;
-}
-*/
+
 social-link {
     box-sizing: content-box;
     font-size: 16px;
@@ -111,6 +104,7 @@ social-link {
     background-color: rgb(68, 55, 55);
     border-spacing: 32px;
 }
+
 div.projects {
     line-height: 32px;
 }
