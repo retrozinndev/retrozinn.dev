@@ -1,4 +1,3 @@
-> ⚠️ Site stage: Development
 ### Hi👋! About me...
 I'm a Computer enthusiast that's learning programming languages! Also I'm Note Studios creator.
 
