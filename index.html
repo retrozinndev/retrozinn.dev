@@ -30,14 +30,11 @@
     <body>
         <script>
             const browserLang = navigator.language;
-            switch(browserLang.startsWith) {
-                case "pt":
-                    window.location.href="/br";
-                break;
-                default:
-                    window.location.href="/en";
-                break;
-            }
+            if(browserLang.startsWith("pt")) {
+                window.navigator.href="/br";
+            } else {
+                window.location.href="/en";
+            } 
         </script>
         <main>
             <div class="container">
