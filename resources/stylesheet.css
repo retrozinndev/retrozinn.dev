@@ -1,6 +1,6 @@
 
 :root {
-    --navbar-color: #336588;
+    --navbar-color: rgb(47, 49, 54);
     --background-color: #1e1e1f;
     --primary-color: #3a4750;
     --secondary-color: #343c42; 
@@ -179,21 +179,23 @@ footer a {
     color: white;
 }
 
-.not-found-title {
-    font-size: 45px;
+.content.not-found h1 {
+    font-size: 40px;
     font-style: bold;
-    position: flex;
 }
 
-.not-found-desc {
-    font-size: 20px;
+.content.not-found p {
+    width: auto;
+    font-size: large;
 }
 
-.container.not-found {
-    width: 100%;
-    margin-top: 20%;
+.content.not-found {
+    width:fit-content;
     height: fit-content;
-    position: flex;
+    top: calc(100vh / 2 - 18vh);
+    position: absolute;
+    text-align: center;
+    width: 100%;
     content: center;
     text-align: center;
 }
