@@ -1,0 +1,28 @@
+---
+import "../styles/global.css";
+import NavBar from "../components/NavBar.astro";
+import OldLayout from "../layouts/OldLayout.astro";
+---
+
+<NavBar />
+<OldLayout icon="https://github.com/retrozinndev.png" title="retrozinndev | Not Found" >
+    <div class="center">
+        <div class="not-found">
+            <h1>404!</h1>
+            <p>
+                Looks like I didn't developed this yet!<br>
+                Feel free to suggest me anything, talk to me on any of <a href="/#socials">my socials!</a>
+            </p>
+        </div>
+    </div>
+</OldLayout>
+
+<style>
+    .not-found h1 {
+        font-size: 45px;
+    }
+
+    .not-found p {
+        font-size: 18px;
+    }
+</style>
