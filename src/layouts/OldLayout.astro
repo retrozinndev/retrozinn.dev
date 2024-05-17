@@ -1,12 +1,11 @@
 ---
 import "../styles/global.css";
 
-interface OldLayout {
+interface Props {
     title: string;
     icon: string;
 }
-const { title } = Astro.props;
-const { icon } = Astro.props;
+const { title, icon } = Astro.props;
 ---
 
 <!DOCTYPE html>
