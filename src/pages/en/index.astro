@@ -1,110 +1,51 @@
 ---
-import CustomFooter from '../../components/CustomFooter.astro';
+import Footer from '../../components/Footer.astro';
 import NavBar from '../../components/NavBar.astro';
+import SocialLinks from '../../components/SocialLinks.astro';
 import OldLayout from '../../layouts/OldLayout.astro';
-
-export const developerIcon = "https://github.com/retrozinndev.png";
+import "../../styles/global.css"
 ---
-<NavBar />
 
-<OldLayout title={ "retrozinndev" + " | " + "Home" } icon={ developerIcon }>
-    
+<OldLayout title={ "retrozinndev" + " | " + "Home" } icon="https://github.com/retrozinndev.png">
+    <NavBar />
     <body>
         <div class="container">
             <div class="title">
-                <section id="title">
-                    <h1>Hi, I'm <user-name>João!</user-name></h1>
-                </section>
+                    <h1>Hi, I'm <span class="highlight">João!</span></h1>
             </div>
-            <div class="chars">
-                <section id="characteristics">
-                    <characteristics>
-                        <b>You can call me</b>: João, Retrozinn <br>
-                        <b>Pronouns</b>: He/Him (Ele/Dele)<br>
-                        <b>Languages<b>: Português Brasileiro, English <br>
-                    </characteristics>
-                </section>
+            <div class="description" id="chars">
+                <b>Pronouns</b>: He/Him (Ele/Dele)<br>
+                <b>Languages<b>: Português Brasileiro, English <br>
+                <b>Skills</b>: Java, C#, TypeScript, Astro <br>
             </div>
             <br>
-            <div class="about">
-                <section id="about">
-                    <about>
-                        I'm a <b>self taught programmer </b>and<b> tech enthusiast</b> that's learning software development stuff! <br>
-                        <b>I love the open-source communitty!</b> I like: coding, learning about Linux and making games and apps in my free time! <br>
-                    </about>
-                </section>
+            <div class="about" id="about">
+                I'm a <b>self taught programmer </b>and<b> tech enthusiast</b> that's learning software development stuff! <br>
+                <b>I love the open-source communitty!</b> I like: coding, learning about Linux and making games and apps in my free time! <br>
             </div>
-            <div class="projects">
-                <section id="projects">
-                    <h2>My Projects: </h2>
-                    <ul class="projects">
-                        <li>
-                            <a class="project" href="/JSONutils">JSONutils: A JSON library for Java, focused at being easy-to-use</a>
-                        </li>
-                        <li>
-                            <a class="project" href="/TheTraveler">The Traveler: A free and open-source 2D Shooter game!</a>
-                        </li>
-                        <li>
-                            <a class="project" href="/UpDateNTime">UpDateNTime: Tool for syncing your date and time with the internet!</a>
-                        </li>
-                        <li>
-                            <a class="project" href="/SpaceShooter">Space Shooter: A Game about shooting meteors in space!</a>
-                        </li>
-                    </ul>
-                </section>
+            <div class="projects" id="projects">
+                <h2>My Projects: </h2>
+                <ul class="projects">
+                    <li>
+                        <a class="project" href="/JSONutils">JSONutils: A JSON library for Java, focused at being easy-to-use</a>
+                    </li>
+                    <li>
+                        <a class="project" href="/TheTraveler">The Traveler: A free and open-source 2D Shooter game!</a>
+                    </li>
+                    <li>
+                        <a class="project" href="/UpDateNTime">UpDateNTime: Tool for syncing your date and time with the internet!</a>
+                    </li>
+                    <li>
+                        <a class="project" href="/SpaceShooter">Space Shooter: A Game about shooting meteors in space!</a>
+                    </li>
+                </ul>
             </div>
-            <div class="socials">
-                <section id="socials">
-                    <h2>You can find me in: </h2>
-                    
-                    <ul>
-                        <li>
-                            <iframe
-                            title="Discord user embed"
-                            width="340"
-                            height=120
-                            frameborder="0"
-                            sandbox="allow-scripts"
-                            src="https://widgets.vendicated.dev/user?id=568589231954591749&theme=dark&banner=true&full-banner=false&rounded-corners=true&discord-icon=true&badges=false&guess-nitro=true&background-color=%23000000&foreground-color=%23fff">
-                            </iframe>
-                        </li>
-                    </ul>
-
-                    <ul>
-                        <li>
-                            <a class="link" href="https://discord.com/users/568589231954591749">Discord</a>
-                        </li>
-                        <li>
-                            <a class="link" href="https://github.com/retrozinndev">GitHub</a>
-                        </li>
-                        <li>
-                            <a class="link" href="https://gitlab.com/retrozinndev">GitLab</a>
-                        </li>
-                        <li>
-                            <a class="link" href="https://codeberg.org/retrozinndev">CodeBerg</a>
-                        </li>
-                        <li>
-                            <a class="link" href="https://gravatar.com/retrozinndev">Gravatar</a>
-                        </li>
-                        <li>
-                            <a class="link" href="https://x.com/retrozinndev">X/Twitter</a>
-                        </li>
-                        <li>
-                            <a class="link" href="https://matrix.to/#/@retrozinndev:matrix.org">Matrix</a>
-                        </li>
-                        <li>
-                            <a class="link" href="https://www.reddit.com/user/Much_Clue7037">Reddit</a>
-                        </li>
-                        <li>
-                            <a class="link" href="mailto:joaovodias@gmail.com">Mail</a>
-                        </li>
-                    </ul>
-                </section>
+            <div class="socials ul" id="socials">
+                <h2>You can find me in: </h2>
+                <SocialLinks />
                 <br>
             </div>
         </div>
     </body>
-    <CustomFooter>
-        This page is open-source · <a href="https://github.com/retrozinndev/retrozinndev.github.io"> Improve this Page</a>
-    </CustomFooter>
+    <Footer />
 </OldLayout>

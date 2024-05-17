@@ -139,7 +139,7 @@ iframe {
 
 .socials ul {
     max-width: calc(100vw - var(--margin-left));
-    line-height: 38px;
+    line-height: 25px;
     font-size: 14px;
     display: flex;
     flex-direction: row;
@@ -156,18 +156,4 @@ iframe {
     background-color: var(--secondary-color);
     padding: 2px;
     margin: 1px;
-}
-
-footer {
-    overflow: scroll;
-    bottom: 0px;
-    box-sizing: content-box;
-    background-color: var(--navbar-color);
-    border-radius: 16px;
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-    font-size: 14px;
-    text-align: center;
-    width: 100vw;
-    height: fit-content;
 }
