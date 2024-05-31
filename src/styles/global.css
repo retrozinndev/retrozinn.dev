@@ -14,32 +14,6 @@ html {
     color-scheme: dark;
 }
 
-.navbar {
-    font-size: medium;
-    position: top;
-    background-color: var(--navbar-color);
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    width: 100vw;
-    height: auto;
-}
-
-.navbar .links {
-    list-style-type: none;
-    overflow: hidden;
-    padding: 0;
-    text-align: center;
-}
-
-.navbar .links .link {
-    float: left;
-    display: list-item;
-    margin-left: 16px;
-    margin-top: 0;
-}
-
 .center {
     width: 100%;
     text-align: center;
@@ -65,15 +39,15 @@ body {
 }
 
 h1 {
-    font-size: 21.5px;
+    font-size: 32.5px;
 }
 
 h2 {
-    font-size: 18px;
+    font-size: 22px;
 }
 
 h3 {
-    font-size: 15.5px;
+    font-size: 18px;
 }
 
 a.header-button {
@@ -100,9 +74,18 @@ a:not(:hover) {
 
 .highlight {
     position: flex;
-    font-size: 26px;
     font-style: bolder;
     font-weight: bolder;
+    color: var(--text-emphasis-color);
+}
+
+.highlight:is(:hover) {
+    transition: ease-in-out 500ms;
+    color: wheat;
+}
+
+.highlight:not(:hover) {
+    transition: ease-in 250ms;
     color: var(--text-emphasis-color);
 }
 
@@ -138,7 +121,6 @@ iframe {
 }
 
 .socials ul {
-    max-width: calc(100vw - var(--margin-left));
     line-height: 25px;
     font-size: 14px;
     display: flex;

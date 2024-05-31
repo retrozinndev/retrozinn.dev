@@ -3,11 +3,17 @@ import "../styles/global.css";
 
 var defaultOptions = {
     Home: "Home", 
-    About: "About",
+    About: "About Me",
     Projects: "Projects"
 };
 ---
+
 <header>
+    <div class="nav-left">
+        <a rel="author" href="https://github.com/retrozinndev">
+        <img src="https://github.com/retrozinndev.png" alt="Me">
+        </a>
+    </div>
     <nav class="navbar">
         <ul class="links">
             <li class="link">
@@ -22,3 +28,55 @@ var defaultOptions = {
         </ul>
     </nav>
 </header>
+
+<style>
+    :root {
+        --avatar-size: 32px;
+        --avatar-margin-left: 16px;
+    }
+
+    header {
+        display: flex;
+        flex-direction: row;
+        background-color: var(--navbar-color);
+    }
+
+    .navbar {
+        display: flex;
+        font-size: medium;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: auto;
+    }
+
+    .nav-left {
+        float: left;
+        display: flex;
+        position: relative;
+    }
+
+    .nav-left > a > img {
+        border-radius: 16px;
+        width: var(--avatar-size);
+        height: var(--avatar-size);
+        margin-top: 9px;
+        margin-left: var(--avatar-margin-left);
+    }
+
+    .navbar .links {
+        display: flex;
+        width: fit-content;
+        list-style-type: none;
+        overflow: hidden;
+        text-align: center;
+        margin-right: calc(var(--avatar-size) + var(--avatar-margin-left));
+    }
+
+    .navbar .links .link {
+        display: list-item;
+        margin-inline: 8px;
+        margin-top: 0;
+    }
+</style>

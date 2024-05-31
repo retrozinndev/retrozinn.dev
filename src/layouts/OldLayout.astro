@@ -4,12 +4,13 @@ import "../styles/global.css";
 interface Props {
     title: string;
     icon: string;
+    lang: string;
 }
-const { title, icon } = Astro.props;
+const { title, icon, lang } = Astro.props;
 ---
 
-<!DOCTYPE html>
-<html lang="en">
+
+<html lang={ lang }>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
