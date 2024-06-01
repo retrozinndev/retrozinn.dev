@@ -57,21 +57,6 @@ a.header-button {
     box-sizing: 90px;
 }
 
-a {
-    font-style: bolder;
-    color: white;
-    transition: ease;
-    transition-duration: 350ms;
-}
-
-a:is(:hover) {
-    color: var(--link-color);
-}
-
-a:not(:hover) {
-    color: white;
-}
-
 .highlight {
     position: flex;
     font-style: bolder;

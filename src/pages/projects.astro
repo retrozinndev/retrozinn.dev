@@ -1,0 +1,43 @@
+---
+import ProjectCard from "../components/ProjectCard.astro";
+import ProjectLayout from "../layouts/ProjectLayout.astro";
+import "../styles/global.css";
+---
+
+<ProjectLayout title="retrozinndev's Projects" icon="https://github.com/retrozinndev.png">
+    <h1>Projects</h1>
+    <p>
+        Here are some of my projects! You can test them out on 
+        <a rel="_blank" href="https://repos.retrozinn.dev">GitHub</a>.
+    </p>
+    <div class="projects">
+        <li>
+            <ProjectCard icon="https://github.com/retrozinndev.png" developer="retrozinndev" title="JSONutils" description="A JSON library for Java, focused at being easy to use" href="https://github.com/retrozinndev/jsonutils" />
+        </li>
+        <li>
+            <ProjectCard icon="https://github.com/notestudios.png" developer="notestudios" title="The Traveler" description="A free and open-source 2D Shooter game!" href="https://github.com/notestudios/thetraveler" />
+        </li>
+        <li>
+            <ProjectCard icon="https://github.com/retrozinndev.png" developer="retrozinndev" title="UpDateN'Time" description="Tool that synchronizes your date and time with the internet!" href="https://github.com/retrozinndev/updatentime" />
+        </li>
+        <li>
+            <ProjectCard icon="https://github.com/notestudios.png" developer="notestudios" title="Note UI" description="A library for the Note Studios UI design" href="https://github.com/notestudios/noteui" />
+        </li>
+        <li>
+            <ProjectCard icon="https://github.com/notestudios.png" developer="notestudios" title="Space Shooter" description="A game about shooting meteors in Space!" href="https://github.com/notestudios/spaceshooter" />
+        </li>
+    </div>
+
+</OldLayout>
+
+
+<style>
+    .projects {
+        display: flex;
+        list-style-type: none;
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding: 8px;
+    }
+</style>
+

@@ -9,7 +9,7 @@ interface Props {
 const { title, icon, lang } = Astro.props;
 ---
 
-
+<!doctype html>
 <html lang={ lang }>
 <head>
     <meta charset="UTF-8">
@@ -18,4 +18,17 @@ const { title, icon, lang } = Astro.props;
     <link rel="icon" href={ icon }>
 </head>
 <slot />
+
+<style>
+    a {
+        font-weight: bold;
+        color: white;
+        transition: ease;
+        transition-duration: 350ms;
+    }
+
+    a:hover {
+        color: var(--link-color);
+    }
+</style>
 </html>
