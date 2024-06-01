@@ -6,19 +6,11 @@ var options = {
     About: "About Me",
     Projects: "Projects"
 };
-
-var optionsPT = {
-    Home: "Início",
-    About: "Sobre mim",
-    Projects: "Projetos"
-};
-
-if(navigator.language.startsWith("pt")) {
-    options.Home = optionsPT.Home;
-    options.About = optionsPT.About;
-    options.Projects = optionsPT.Projects;
-}
 ---
+
+<script>
+    console.log(Astro.currentLocale);
+</script>
 
 <header>
     <div class="nav-left">
