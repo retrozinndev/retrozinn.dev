@@ -1,0 +1,69 @@
+---
+interface Props {
+    icon: string;
+    developer: string;
+    title: string;
+    description: string;
+    href: string;
+}
+
+const { icon, developer, title, description, href } = Astro.props;
+---
+
+<li class="project-card">
+    <a href={ href }>
+        <img class="icon" src={ icon }>
+        <h4 class="developer">{ developer }</h4>
+        <h2>{ title }</h2>
+        <p>
+            { description }
+        </p>
+    </a>
+</li>
+
+<style>
+    .project-card {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        list-style-type: none;
+        border: 1px solid rgb(78, 78, 78);
+        background: rgb(48, 46, 48);
+        border-radius: 10px;
+        padding: 10px;
+        line-height: 0.8rem;
+        transition: ease-in 150ms;
+        margin-right: 6px;
+        margin-bottom: 6px;
+    }
+
+    .project-card:is(:hover) {
+        border-color: gray;
+        background: rgb(37, 36, 37);
+    }
+
+    .project-card > a {
+        transition: none;
+        color: white;
+    }
+
+    .icon {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+    }
+
+    .developer {
+        margin-top: 12px;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    p {
+        font-size: 14px;
+        font-weight: normal;
+        line-height: 1.4rem;
+    }
+</style>
