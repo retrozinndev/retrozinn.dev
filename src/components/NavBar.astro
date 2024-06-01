@@ -1,11 +1,23 @@
 ---
 import "../styles/global.css";
 
-var defaultOptions = {
+var options = {
     Home: "Home", 
     About: "About Me",
     Projects: "Projects"
 };
+
+var optionsPT = {
+    Home: "Início",
+    About: "Sobre mim",
+    Projects: "Projetos"
+};
+
+if(navigator.language.startsWith("pt")) {
+    options.Home = optionsPT.Home;
+    options.About = optionsPT.About;
+    options.Projects = optionsPT.Projects;
+}
 ---
 
 <header>
@@ -17,13 +29,13 @@ var defaultOptions = {
     <nav class="navbar">
         <ul class="links">
             <li class="link">
-                <a class="header-button" href="#top" target="_self">{ defaultOptions.Home }</a>
+                <a href="#top" target="_self">{ options.Home }</a>
             </li>
             <li class="link">
-                <a class="header-button" href="#chars" target="_self">{ defaultOptions.About }</a>
+                <a href="#chars" target="_self">{ options.About }</a>
             </li>
             <li class="link">
-                <a class="header-button" href="#projects" target="_self">{ defaultOptions.Projects }</a>
+                <a href="#projects" target="_self">{ options.Projects }</a>
             </li>
         </ul>
     </nav>
@@ -65,7 +77,7 @@ var defaultOptions = {
         margin-left: var(--avatar-margin-left);
     }
 
-    .navbar .links {
+    .links {
         display: flex;
         width: fit-content;
         list-style-type: none;
@@ -74,9 +86,20 @@ var defaultOptions = {
         margin-right: calc(var(--avatar-size) + var(--avatar-margin-left));
     }
 
-    .navbar .links .link {
+    .link {
         display: list-item;
         margin-inline: 8px;
         margin-top: 0;
+    }
+
+    .link > a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+        transition: 250ms;
+    }
+
+    .link > a:hover {
+        color: var(--link-color);
     }
 </style>
