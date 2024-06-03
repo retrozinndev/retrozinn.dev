@@ -1,50 +1,26 @@
 ---
-import Footer from '../../components/Footer.astro';
-import NavBar from '../../components/NavBar.astro';
 import SocialLinks from '../../components/SocialLinks.astro';
-import OldLayout from '../../layouts/OldLayout.astro';
+import PageLayout from '../../layouts/PageLayout.astro';
+import "../../styles/about_page.css";
 ---
 
-<OldLayout title={ "retrozinndev" + " | " + "Início" } icon="https://github.com/retrozinndev.png" lang="pt-BR">
-    <NavBar />
+<PageLayout title={ "retrozinndev" + " | " + "Início" } icon="https://github.com/retrozinndev.png" lang="pt-BR">
     <body>
         <div class="container">
-            <div class="title">
+            <div class="about-section title">
                 <h1>Olá, sou o <span class="highlight">João!</span></h1>
             </div>
-            <div class="description" id="chars">
-                <b>Pronomes</b>: Ele/Dele (He/Him)<br>
-                <b>Idiomas<b>: Inglês(English), Português Brasileiro </b> <br>
-                <b>Skills</b>: Java, C#, TypeScript, Astro
-            </div>
-            <br>
             <div class="about" id="about">
-                Sou um programador <b>autodidata </b>e um<b> entusiasta de tecnologia</b> que está aprendendo coisas sobre programação! <br>
-                <b>Amo a comunidade de código-aberto!</b> Gosto de: escrever códigos, aprender sobre Linux e fazer joguinhos no meu tempo livre! <br>
+                Sou um programador autodidata e entusiasta de tecnologia que está amando o <br>
+                mundo da programação! Eu gosto muito de fazer projetos open-source! <br>
+                Eu curto: programar, aprender sobre Linux, fazer jogos e aplicativos no meu <br>
+                tempo livre!
             </div>
-            <div class="projects"  id="projects">
-                <h2>Meus Projetos: </h2>
-                <ul class="projects">
-                    <li>
-                        <a class="project" href="/JSONutils">JSONutils: Uma biblioteca JSON fácil de usar, para Java.</a>
-                    </li>
-                    <li>
-                        <a class="project" href="/TheTraveler">The Traveler: Um jogo 2D de tiro grátis e open-source!</a>
-                    </li>
-                    <li>
-                        <a class="project" href="/UpDateNTime">UpDateNTime: Ferramenta para sicronizar a data e hora com o da internet.</a>
-                    </li>
-                    <li>
-                        <a class="project" href="/SpaceShooter">Space Shooter: Um jogo sobre atirar em meteoros no Espaço!</a>
-                    </li>
-                </ul>
-            </div>
+            <a href="/projects"><h3 class="projects" id="projects">Veja meus projetos &UpperRightArrow;</h3></a>
             <div class="socials ul" id="socials">
-                <h2>Você pode me encontrar em: </h2>
+                <h2>You can find me in: </h2>
                 <SocialLinks />
-                <br>
             </div>
         </div>
     </body>
-    <Footer />
-</OldLayout>
+</PageLayout>
