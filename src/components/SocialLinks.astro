@@ -11,54 +11,75 @@
         frameborder="0"
         src="https://widgets.vendicated.dev/user?id=568589231954591749&theme=dark&banner=true&full-banner=false&rounded-corners=true&discord-icon=true&badges=false&guess-nitro=true&background-color=%23000000&foreground-color=%23fff" />
 
-<ul class="stylish-row">
+<ul class="stylish-list">
     <li>
-        <a href="https://discord.com/users/568589231954591749">Discord</a>
+        <img src="/public/icons/discord.svg" draggable="false"> Discord <a href="https://discord.com/users/568589231954591749">retrozinndev</a>
     </li>
     <li>
-        <a href="https://github.com/retrozinndev">GitHub</a>
+        <img class="no-brightness" src="/public/icons/github.svg" draggable="false"> GitHub <a href="https://github.com/retrozinndev">retrozinndev</a>
     </li>
     <li>
-        <a href="https://gitlab.com/retrozinndev">GitLab</a>
+        <img src="/public/icons/gitlab.svg" draggable="false"> GitLab <a href="https://gitlab.com/retrozinndev">retrozinndev</a>
     </li>
     <li>
-        <a href="https://codeberg.org/retrozinndev">CodeBerg</a>
+        <img class="no-brightness" src="/public/icons/codeberg.svg" draggable="false"> CodeBerg<a href="https://codeberg.org/retrozinndev">retrozinndev</a>
     </li>
     <li>
-        <a href="https://gravatar.com/retrozinndev">Gravatar</a>
+        <img class="no-brightness" src="/public/icons/x.svg" draggable="false"> X/Twitter <a href="https://x.com/retrozinndev">@retrozinndev</a>
     </li>
     <li>
-        <a href="https://x.com/retrozinndev">X/Twitter</a>
+        <img src="/public/icons/matrix.svg" draggable="false"> Matrix <a href="https://matrix.to/#/@retrozinndev:matrix.org">@retrozinndev:matrix.org</a>
     </li>
     <li>
-        <a href="https://matrix.to/#/@retrozinndev:matrix.org">Matrix</a>
+        <img src="/public/icons/reddit.svg" draggable="false"> Reddit <a href="https://www.reddit.com/user/Much_Clue7037">Much_Clue7037</a>
     </li>
     <li>
-        <a href="https://www.reddit.com/user/Much_Clue7037">Reddit</a>
-    </li>
-    <li>
-        <a href="mailto:joaovodias@gmail.com">E-mail</a>
+        <img src="/public/icons/mail.svg" draggable="false"> Mail <a href="mailto:joaovodias@gmail.com">retrozinndev@gmail.com</a>
     </li>
 </ul>
 
 <style>
-    .stylish-row {
-        max-width: calc(100vw - var(--margin-left));
-        font-size: 14px;
-        display: flex;
-        flex-direction: row;
-        list-style-type: none;
-        flex-wrap: wrap;
+    .stylish-list {
+        font-size: 16px;
+        padding-left: 12px;
+        list-style: none;
     }
 
-    .stylish-row > li {
+    .stylish-list > li {
+        display:flex;
+        width: fit-content;
         box-sizing: content-box;
-        font-size: 16px;
-        font-style: bold;
-        border: 4px solid var(--primary-color);
         border-radius: 8px;
-        background-color: var(--secondary-color);
         padding-inline: 2px;
-        margin: 1px;
+        margin: 4px;
+        line-height: 28px;
+        align-items: center;
+        justify-content: center;
+    }
+
+    a {
+        margin-left: 6px;
+        text-decoration: none;
+        color: white;
+        border: 1px solid var(--primary-color);
+        border-radius: 12px;
+        background-color: var(--secondary-color);
+        transition: ease-in 200ms;
+        padding: 2px;
+        padding-inline: 4px;
+    }
+
+    a:hover {
+        color: var(--link-color);
+    }
+
+    img {
+        width: 22px;
+        height: 22px;
+        border-radius: 4px;
+        margin-right: 6px;
+    }
+    img:not(.no-brightness) {
+        filter: brightness(80000%);
     }
 </style>

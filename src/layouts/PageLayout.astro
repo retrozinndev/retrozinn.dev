@@ -1,0 +1,27 @@
+---
+import Footer from "../components/Footer.astro";
+import NavBar from "../components/NavBar.astro";
+import "../styles/global.css";
+
+interface Props {
+    title: string;
+    icon: string;
+    lang: string;
+}
+const { title, icon, lang } = Astro.props;
+---
+
+<!doctype html>
+<html lang={ lang }>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{ title }</title>
+        <link rel="icon" href={ icon }>
+    </head>
+    <NavBar />
+
+    <slot />
+
+    <Footer />
+</html>

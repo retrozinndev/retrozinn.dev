@@ -1,0 +1,24 @@
+
+@import "_colors.css";
+
+.container {
+    margin-left: 8%;
+    width: fit-content;
+    font-weight: 500;
+}
+
+
+
+a {
+    color: white;
+    text-decoration-thickness: 2px;
+    transition: ease-in 150ms;
+}
+
+a:hover {
+    color: var(--link-color);
+}
+
+p {
+    line-height: 1.2rem;
+}

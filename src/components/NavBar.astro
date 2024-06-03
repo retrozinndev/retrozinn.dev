@@ -34,15 +34,15 @@ var options = {
 </header>
 
 <style>
-    :root {
-        --avatar-size: 32px;
-        --avatar-margin-left: 16px;
-    }
 
     header {
+        --avatar-size: 32px;
+        --avatar-margin-left: 10px;
+
         display: flex;
         flex-direction: row;
         background-color: var(--navbar-color);
+        padding: 6px;
     }
 
     .navbar {
@@ -84,14 +84,14 @@ var options = {
         margin-top: 0;
     }
 
-    .link > a {
+    a {
         color: white;
         text-decoration: none;
         font-weight: bold;
         transition: 250ms;
     }
 
-    .link > a:hover {
+    a:hover {
         color: var(--link-color);
     }
 </style>
