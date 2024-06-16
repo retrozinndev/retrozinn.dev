@@ -1,21 +1,32 @@
 ---
+
 import "../styles/global.css";
 import NavBar from "../components/NavBar.astro";
-import PageLayout from "../layouts/PageLayout.astro";
 ---
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>retrozinndev - Not Found!</title>
+    <link rel="icon" href="https://github.com/retrozinndev.png" />
+</head>
 <NavBar />
-<PageLayout title="retrozinndev | Not Found" icon="https://github.com/retrozinndev.png" lang="en-US">
+<body>
     <div class="center">
         <div class="not-found">
-            <h1>404!</h1>
+            <h1> 404! </h1>
             <p>
-                Looks like I didn't developed this yet!<br>
+                Looks like I haven't developed this yet!<br>
                 Feel free to suggest me anything, talk to me on any of <a href="/#socials">my socials!</a>
             </p>
         </div>
     </div>
-</PageLayout>
+<body>
+    
+</body>
+</html>
 
 <style>
     .not-found h1 {
