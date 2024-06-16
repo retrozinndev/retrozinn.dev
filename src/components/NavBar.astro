@@ -2,7 +2,8 @@
 import { useTranslations } from "../i18n/utils.ts";
 import "../styles/global.css";
 
-const tr = useTranslations(Astro.params.lang as never);
+const lang = Astro.params.lang;
+const tr = useTranslations(lang as never);
 ---
 
 <header>
@@ -14,13 +15,13 @@ const tr = useTranslations(Astro.params.lang as never);
     <nav class="navbar">
         <ul class="links">
             <li class="link">
-                <a href="/#top" target="_self">{ tr("nav.home") }</a>
+                <a href={ `${lang}/#top` } target="_self">{ tr("nav.home") }</a>
             </li>
             <li class="link">
-                <a href="/#chars" target="_self">{ tr("nav.about") }</a>
+                <a href={ `${lang}/#chars` } target="_self">{ tr("nav.about") }</a>
             </li>
             <li class="link">
-                <a href="/projects" target="_self">{ tr("nav.projects") }</a>
+                <a href={ `${lang}/projects` } target="_self">{ tr("nav.projects") }</a>
             </li>
         </ul>
     </nav>
