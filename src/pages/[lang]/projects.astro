@@ -1,7 +1,10 @@
 ---
-import ProjectCard from "../components/ProjectCard.astro";
-import PageLayout from "../layouts/PageLayout.astro";
-import "../styles/global.css";
+import { getStaticPaths } from "../../i18n/route.ts";
+import ProjectCard from "../../components/ProjectCard.astro";
+import PageLayout from "../../layouts/PageLayout.astro";
+import "../../styles/global.css";
+
+export { getStaticPaths };
 ---
 
 <PageLayout title="retrozinndev's Projects" icon="https://github.com/retrozinndev.png" lang="en-US">

@@ -1,23 +1,26 @@
 ---
+import { getStaticPaths } from "../../i18n/route.ts";
+import { useTranslations }  from "../../i18n/utils.ts";
 import SocialLinks from '../../components/SocialLinks.astro';
 import PageLayout from '../../layouts/PageLayout.astro';
 import "../../styles/about_page.css";
+
+export { getStaticPaths };
+const tr = useTranslations(Astro.params.lang as never);
 ---
 
 <PageLayout title={ "retrozinndev" + " | " + "Home" } icon="https://github.com/retrozinndev.png" lang="en-US">
     <body>
         <div class="container">
             <div class="about-section title">
-                    <h1>Hi, I'm <span class="highlight">João!</span></h1>
+                    <h1>{ tr("about.title")  } <span class="highlight">João!</span> </h1>
             </div>
             <div class="about" id="about">
-                I'm a self-taught programmer and tech enthusiast that's learning software development stuff! <br>
-                I absolutely love making open-source projects! <br>
-                I like: coding, learning about Linux and making games and apps in my free time! <br>
+                { tr("about.description") }
             </div>
-            <a href="/projects"><h3 class="projects" id="projects">Get in touch with my projects &UpperRightArrow;</h3></a>
+            <a href="/projects"><h3 class="projects" id="projects">{ tr("about.projects") } &UpperRightArrow;</h3></a>
             <div class="socials ul" id="socials">
-                <h2>You can find me in: </h2>
+                <h2>{ tr("about.socials_title") }</h2>
                 <SocialLinks />
             </div>
         </div>
