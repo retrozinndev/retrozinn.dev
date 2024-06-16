@@ -13,5 +13,3 @@ export let i18n: object = {
 
 export const languages: Array<string> = Object.keys(i18n);
 export const defaultLang = "en" as keyof typeof i18n;
-
-console.log(languages);
