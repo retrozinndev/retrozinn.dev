@@ -17,8 +17,17 @@ export const en = {
 
     not_found: {
         title: "404 - Not found!",
-        description: `Looks like I haven't developed this yet!
-                    Feel free to suggest me anything, talk to me on any of`,
-        social_link: "my socials!"
+        description: {
+            l1: "Looks like I haven't developed this yet!",
+            l2: "Feel free to suggest me anything, talk to me on any of",
+            socials: "my socials!"
+        }
+    },
+
+    footer: {
+        txt1: "Made with",
+        txt2: "by retrozinndev",
+        txt3: "Improve this page"
     }
+
 } as const;

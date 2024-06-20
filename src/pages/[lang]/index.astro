@@ -9,7 +9,7 @@ export { getStaticPaths };
 const tr = useTranslations(Astro.params.lang as never);
 ---
 
-<PageLayout title={ "retrozinndev" + " | " + "Home" } icon="https://github.com/retrozinndev.png" lang="en-US">
+<PageLayout title={ "retrozinndev - Home" } icon="https://github.com/retrozinndev.png" lang="en-US">
     <body>
         <div class="container">
             <div class="about-section title">
@@ -18,7 +18,9 @@ const tr = useTranslations(Astro.params.lang as never);
             <div class="about" id="about">
                 { tr("about.description") }
             </div>
-            <a href="/projects"><h3 class="projects" id="projects">{ tr("about.projects") } &UpperRightArrow;</h3></a>
+            <a href={ `/${Astro.params.lang}/projects` }>
+                <h3 class="projects" id="projects">{ tr("about.projects") } &UpperRightArrow;</h3>
+            </a>
             <div class="socials ul" id="socials">
                 <h2>{ tr("about.socials_title") }</h2>
                 <SocialLinks />

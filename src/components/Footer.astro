@@ -1,10 +1,13 @@
 ---
+import { useTranslations } from "../i18n/utils";
+
+const tr = useTranslations(Astro.params.lang as never);
 ---
 
 <footer class="footer">
     <div class="container">
-        Made with &hearts; by retrozinndev
-         · <a href="https://github.com/retrozinndev/retrozinndev.github.io">Improve this Page</a>
+        { tr("footer.txt1") } &hearts; { tr("footer.txt2") }
+         · <a href="https://github.com/retrozinndev/retrozinndev.github.io">{ tr("footer.txt3") }</a>
     </div>
 </footer>
 

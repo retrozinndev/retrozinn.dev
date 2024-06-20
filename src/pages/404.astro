@@ -1,8 +1,15 @@
 ---
+import { getLanguageFromURL, useTranslations } from "../i18n/utils";
 import "../styles/global.css";
 import NavBar from "../components/NavBar.astro";
 
-Astro.params.lang = "en";
+Astro.params.lang = getLanguageFromURL(Astro.url);
+
+if(Astro.params.lang === undefined) {
+    Astro.params.lang = "en";
+}
+
+const tr = useTranslations(Astro.params.lang as never);
 ---
 
 <!DOCTYPE html>
@@ -17,10 +24,10 @@ Astro.params.lang = "en";
 <body>
     <div class="center">
         <div class="not-found">
-            <h1> 404! </h1>
+            <h1> { tr("not_found.title") } </h1>
             <p>
-                Looks like I haven't developed this yet!<br>
-                Feel free to suggest me anything, talk to me on any of <a href="/#socials">my socials!</a>
+                { tr("not_found.description.l1") } <br>
+                { tr("not_found.description.l2") } <a href={ `/${Astro.params.lang}/#socials` }>{ tr("not_found.description.socials") }</a>
             </p>
         </div>
     </div>
