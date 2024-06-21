@@ -1,10 +1,9 @@
 
-import { i18n, defaultLang } from "./ui.ts";
+import { languages, i18n, defaultLang } from "./ui.ts";
 
 export function getLanguageFromURL(url: URL): string {
-    var splittedURL = url.pathname.split("/");
-    var currentIntl = splittedURL[1]; // Gets the second URL part
-    var domain = splittedURL[0].replace("/", "");
+    var splittedURL: string[] = url.pathname.split("/");
+    var currentIntl: string = splittedURL[1]; // Gets the second URL part
 
     if(currentIntl in i18n) 
         return currentIntl as keyof typeof i18n;
@@ -24,4 +23,8 @@ export function useTranslations(lang: keyof typeof i18n): Function {
 
         return translation || defaultTranslation || "Couldn't find key to translate.";
     }
+}
+
+export function getLanguages() {
+    return languages;
 }
