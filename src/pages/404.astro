@@ -1,13 +1,16 @@
 ---
-import { getLanguageFromURL, useTranslations } from "../i18n/utils";
+import { getLanguages, getLanguageFromURL, useTranslations } from "../i18n/utils";
 import "../styles/global.css";
 import NavBar from "../components/NavBar.astro";
 
-Astro.params.lang = getLanguageFromURL(Astro.url);
+Astro.params.lang = "en";
+const langs: string[] = getLanguages();
 
-if(Astro.params.lang === undefined) {
-    Astro.params.lang = "en";
-}
+langs.forEach(intl => {
+    if(getLanguageFromURL(Astro.url) == intl) {
+        Astro.params.lang = intl;
+    }
+});
 
 const tr = useTranslations(Astro.params.lang as never);
 ---
@@ -24,10 +27,10 @@ const tr = useTranslations(Astro.params.lang as never);
 <body>
     <div class="center">
         <div class="not-found">
-            <h1> { tr("not_found.title") } </h1>
+            <h1> { tr("404.title") } </h1>
             <p>
-                { tr("not_found.description.l1") } <br>
-                { tr("not_found.description.l2") } <a href={ `/${Astro.params.lang}/#socials` }>{ tr("not_found.description.socials") }</a>
+                { tr("404.description.l1") } <br>
+                { tr("404.description.l2") } <a href={ `/${Astro.params.lang}/#socials` }>{ tr("404.socials") }</a>
             </p>
         </div>
     </div>

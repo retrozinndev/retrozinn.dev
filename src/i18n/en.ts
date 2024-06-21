@@ -15,13 +15,13 @@ export const en = {
         projects: "Get in touch with my projects"
     },
 
-    not_found: {
+    404: {
         title: "404 - Not found!",
         description: {
             l1: "Looks like I haven't developed this yet!",
-            l2: "Feel free to suggest me anything, talk to me on any of",
-            socials: "my socials!"
-        }
+            l2: "Feel free to suggest me anything, talk to me on any of"
+        },
+        socials: "my socials!"
     },
 
     footer: {

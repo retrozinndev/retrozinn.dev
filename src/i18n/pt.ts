@@ -15,13 +15,13 @@ export const pt = {
         projects: "Veja os meus projetos"
     },
 
-    not_found: {
+    404: {
         title: "404 - Não encontrado!",
         description: {
             l1: "Parece que eu ainda não desenvolvi essa página!",
-            l2: "Se quiser sugerir alguma ideia, me chame em qualquer uma das",
-            socials: "minhas redes sociais!"
-        }
+            l2: "Se quiser sugerir alguma ideia, me chame em qualquer uma das"
+        },
+        socials: "minhas redes sociais!"
     },
 
     footer: {
