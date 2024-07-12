@@ -5,7 +5,7 @@ export function getLanguageFromURL(url: URL): string {
     var splittedURL: string[] = url.pathname.split("/");
     var currentIntl: string = splittedURL[1]; // Gets the second URL part
 
-    if(currentIntl in i18n) 
+    if(currentIntl in i18n)  
         return currentIntl as keyof typeof i18n;
 
     return currentIntl as string;
@@ -25,6 +25,6 @@ export function useTranslations(lang: keyof typeof i18n): Function {
     }
 }
 
-export function getLanguages() {
+export function getLanguages(): string[] {
     return languages;
 }
