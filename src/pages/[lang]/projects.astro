@@ -1,57 +1,88 @@
 ---
 import { getStaticPaths } from "../../i18n/route.ts";
+import { useTranslations } from "../../i18n/utils";
 import ProjectCard from "../../components/ProjectCard.astro";
 import PageLayout from "../../layouts/PageLayout.astro";
 import "../../styles/global.css";
 
 export { getStaticPaths };
+
+const tr = useTranslations(Astro.params.lang as never);
 ---
 
 <PageLayout title="retrozinndev's Projects" icon="https://github.com/retrozinndev.png" lang="en-US">
     <div class="container">
-        <h1>Projects</h1>
+        <h1>{ tr("projects.title") }</h1>
         <p>
-            Here are some of my projects! You can test them out on 
+            { tr("projects.description") } 
             <a rel="_blank" href="https://repos.retrozinn.dev">GitHub</a>.
         </p>
         <div class="projects">
-            <li>
-		        <ProjectCard icon="https://github.com/parceiroti/parceiroti.github.io/raw/main/public/icon_default.png" developer="parceiroti" title="parceiroti.github.io" description="(Português) O novo Website da Parceiro TI, em desenvolvimento ativo." href="https://github.com/parceiroti/parceiroti.github.io" />
-	        </li>
-	        <li>
-                <ProjectCard icon="https://github.com/retrozinndev.png" developer="retrozinndev" title="UpDateN'Time" description="Tool that synchronizes your date and time with the internet!" href="https://github.com/retrozinndev/updatentime" />
-            </li>
-            <li>
-                <ProjectCard icon="https://github.com/notestudios.png" developer="notestudios" title="Note UI" description="A library for the Note Studios UI design" href="https://github.com/notestudios/noteui" />
-            </li>
-            <li>
-                <ProjectCard icon="https://github.com/retrozinndev.png" developer="retrozinndev" title="JSONutils" description="A JSON library for Java, focused at being easy to use" href="https://github.com/retrozinndev/jsonutils" />
-            </li>
-            <li>
-                <ProjectCard icon="https://github.com/notestudios.png" developer="notestudios" title="The Traveler" description="A free and open-source 2D Shooter game!" href="https://github.com/notestudios/thetraveler" />
-            </li>
-            <li>
-                <ProjectCard icon="https://github.com/notestudios.png" developer="notestudios" title="Space Shooter" description="A game about shooting meteors in Space!" href="https://github.com/notestudios/spaceshooter" />
-	    </li>
+                <ProjectCard icon="https://github.com/retrozinndev.png"
+                developer="retrozinndev"
+                title="retrozinn.dev"
+                description={ tr("projects.retrozinndev_website.description") }
+                href="https://github.com/retrozinndev/retrozinn.dev" />
+
+		        <ProjectCard icon="https://github.com/parceiroti.png" 
+                developer="parceiroti" 
+                title="parceiroti.github.io" 
+                description={ tr("projects.parceiroti_website.description") } 
+                href="https://github.com/parceiroti/parceiroti.github.io" />
+
+                <ProjectCard icon="https://github.com/retrozinndev.png" 
+                developer="retrozinndev" 
+                title="UpDateN'Time" 
+                description={ tr("projects.updatentime.description") } 
+                href="https://github.com/retrozinndev/updatentime" />
+
+                <ProjectCard icon="https://github.com/notestudios.png" 
+                developer="notestudios" 
+                title="Note UI" 
+                description={ tr("projects.noteui.description") } 
+                href="https://github.com/notestudios/noteui" />
+
+                <ProjectCard icon="https://github.com/retrozinndev.png" 
+                developer="retrozinndev" 
+                title="JSONutils" 
+                description={ tr("projects.jsonutils.description") } 
+                href="https://github.com/retrozinndev/jsonutils" />
+
+                <ProjectCard icon="https://github.com/notestudios.png" 
+                developer="notestudios" 
+                title="The Traveler" 
+                description={ tr("projects.thetraveler.description") } 
+                href="https://github.com/notestudios/thetraveler" />
+
+                <ProjectCard icon="https://github.com/notestudios.png" 
+                developer="notestudios" 
+                title="Space Shooter" 
+                description={ tr("projects.spaceshooter.description") } 
+                href="https://github.com/notestudios/spaceshooter" />
         </div>
     </div>
 
-</OldLayout>
+    <style>
 
+        .container {
+            --padding-inline: 5%;
+            padding: 0 var(--padding-inline);
+            max-width: calc(100% - var(--padding-inline));
+        }
 
-<style>
+        .projects {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+
+        @media screen and (max-width:700px) {
+            .projects {
+                display: inline-block;
+            }
+        }
     
-    .container {
-        margin-left: 5%;
-    }
+    </style>
 
-    .projects {
-        display: flex;
-        list-style-type: none;
-        flex-direction: row;
-        flex-wrap: wrap;
-        padding: 8px;
-    }
-
-</style>
+</OldLayout>
 

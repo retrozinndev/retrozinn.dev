@@ -23,21 +23,21 @@ const { icon, developer, title, description, href } = Astro.props;
 
 <style>
     .project-card {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        list-style-type: none;
-        border: 1px solid rgb(78, 78, 78);
-        background: rgb(48, 46, 48);
-        border-radius: 10px;
+        display: block;
+        list-style: none;
         padding: 10px;
         line-height: 0.8rem;
         transition: ease-in 150ms;
-        margin-right: 6px;
-        margin-bottom: 6px;
+        -webkit-tap-highlight-color: rgba(48, 46, 48, .5);
+        min-width: 150px;
+        min-height: fit-content;
+        border: 1px solid rgb(78, 78, 78);
+        background: rgb(48, 46, 48);
+        border-radius: 10px;
+        margin: 3px;
     }
 
-    .project-card:is(:hover) {
+    .project-card:hover {
         border-color: gray;
         background: rgb(37, 36, 37);
     }
@@ -45,6 +45,13 @@ const { icon, developer, title, description, href } = Astro.props;
     .project-card > a {
         transition: none;
         color: white;
+        text-decoration: none;
+    }
+
+    .project-card h2 {
+        display: flex;
+        flex-wrap: wrap;
+        line-height: 1.2em;
     }
 
     .icon {
@@ -55,10 +62,6 @@ const { icon, developer, title, description, href } = Astro.props;
 
     .developer {
         margin-top: 12px;
-    }
-
-    a {
-        text-decoration: none;
     }
 
     p {

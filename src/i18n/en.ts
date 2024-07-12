@@ -23,6 +23,33 @@ export const en = {
         },
         socials: "my socials!"
     },
+    
+    projects: {
+        title: "Projects",
+        description: "Here are some of my projects! You can also see them on", 
+
+        retrozinndev_website: {
+            description: "My personal website on GitHub!"
+        },
+        parceiroti_website: {
+            description: "The new Parceiro T.I. website, redesigned"
+        },
+        updatentime: {
+            description: "Tool that synchronizes your computer's date and time with the internet!"
+        },
+        noteui: {
+            description: "An UI library for Note Studios games and apps!"
+        },
+        jsonutils: {
+            description: "A JSON library for java that is focused at being easy to use"
+        },
+        thetraveler: {
+            description: "2D Shooter game that is free and open-source!"
+        },
+        spaceshooter: {
+            description: "A free game about shooting meteors in space!"
+        }
+    },
 
     footer: {
         txt1: "Made with",

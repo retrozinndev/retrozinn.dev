@@ -3,7 +3,7 @@ import { getStaticPaths } from "../../i18n/route.ts";
 import { useTranslations }  from "../../i18n/utils.ts";
 import SocialLinks from '../../components/SocialLinks.astro';
 import PageLayout from '../../layouts/PageLayout.astro';
-import "../../styles/about_page.css";
+import "../../styles/_colors.css";
 
 export { getStaticPaths };
 const tr = useTranslations(Astro.params.lang as never);
@@ -18,8 +18,8 @@ const tr = useTranslations(Astro.params.lang as never);
             <div class="about" id="about">
                 { tr("about.description") }
             </div>
-            <a href={ `/${Astro.params.lang}/projects` }>
-                <h3 class="projects" id="projects">{ tr("about.projects") } &UpperRightArrow;</h3>
+            <a class="projects-link" href={ `/${Astro.params.lang}/projects` }>
+                <span id="projects">{ tr("about.projects") } &UpperRightArrow;</span>
             </a>
             <div class="socials ul" id="socials">
                 <h2>{ tr("about.socials_title") }</h2>
@@ -27,4 +27,43 @@ const tr = useTranslations(Astro.params.lang as never);
             </div>
         </div>
     </body>
+    <style>
+        .container {
+            margin-left: 8%;
+            width: fit-content;
+            font-weight: 500;
+        }
+
+        #projects {
+            display: inline-flex;
+            margin: 20px 0;
+            font-size: larger;
+            font-weight: 600;
+            width: fit-content;
+            box-sizing: border-box;
+            background-color: var(--secondary-color-darker);
+            border: solid 0.032em var(--secondary-color);
+            padding: 2px 8px;
+            border-radius: 12px;
+        }
+
+        .projects-link {
+            text-decoration: none;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        a {
+            color: white;
+            text-decoration-thickness: 2px;
+            transition: ease-in 150ms;
+        }
+
+        a:hover {
+            color: var(--link-color);
+        }
+
+        p {
+            line-height: 1.2rem;
+        }
+    </style>
 </PageLayout>
