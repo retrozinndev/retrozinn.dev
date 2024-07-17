@@ -3,67 +3,51 @@ import { getStaticPaths } from "../../i18n/route.ts";
 import { useTranslations }  from "../../i18n/utils.ts";
 import SocialLinks from '../../components/SocialLinks.astro';
 import PageLayout from '../../layouts/PageLayout.astro';
+import LinkButton from "../../components/LinkButton.astro";
 import "../../styles/_colors.css";
 
 export { getStaticPaths };
 const tr = useTranslations(Astro.params.lang as never);
 ---
 
-<PageLayout title={ "retrozinndev - Home" } icon="https://github.com/retrozinndev.png" lang="en-US">
-    <body>
-        <div class="container">
-            <div class="about-section title">
-                    <h1>{ tr("about.title")  } <span class="highlight">João!</span> </h1>
-            </div>
-            <div class="about" id="about">
-                { tr("about.description") }
-            </div>
-            <a class="projects-link" href={ `/${Astro.params.lang}/projects` }>
-                <span id="projects">{ tr("about.projects") } &UpperRightArrow;</span>
-            </a>
-            <div class="socials ul" id="socials">
-                <h2>{ tr("about.socials_title") }</h2>
-                <SocialLinks />
-            </div>
+<PageLayout title={ "retrozinndev - Home" } icon="https://github.com/retrozinndev.png">
+    <div class="container">
+        <div class="about-section title">
+            <h1>{ tr("about.title")  } <span class="highlight">João!</span> </h1>
         </div>
-    </body>
+        <div class="about" id="about">
+            { tr("about.description") }
+        </div>
+        <br>
+        <LinkButton href=`/${Astro.params.lang}/projects`>
+            { tr("about.projects") } &UpperRightArrow;
+        </LinkButton>
+        <br>
+        <div class="socials ul" id="socials">
+            <h2>{ tr("about.socials_title") }</h2>
+            <SocialLinks />
+        </div>
+    </div>
+
     <style>
         .container {
-            margin-left: 8%;
+            padding-inline: 6%;
             width: fit-content;
             font-weight: 500;
         }
 
         #projects {
             display: inline-flex;
-            margin: 20px 0;
             font-size: larger;
             font-weight: 600;
-            width: fit-content;
-            box-sizing: border-box;
-            background-color: var(--secondary-color-darker);
-            border: solid 0.032em var(--secondary-color);
-            padding: 2px 8px;
-            border-radius: 12px;
-        }
-
-        .projects-link {
-            text-decoration: none;
-            -webkit-tap-highlight-color: transparent;
-        }
-
-        a {
-            color: white;
-            text-decoration-thickness: 2px;
-            transition: ease-in 150ms;
-        }
-
-        a:hover {
-            color: var(--link-color);
         }
 
         p {
             line-height: 1.2rem;
+        }
+
+        h1 {
+            font-size: 40px;
         }
     </style>
 </PageLayout>

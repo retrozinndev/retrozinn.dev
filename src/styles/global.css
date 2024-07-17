@@ -23,7 +23,7 @@ body {
     overflow-inline: clip;
     color-scheme: dark;
     color: white;
-    background-color: var(--background-color);
+    background-color: var(--new-background-color);
     margin: auto;
 }
 
@@ -43,15 +43,15 @@ h3 {
     position: flex;
     font-style: bolder;
     font-weight: bolder;
-    color: var(--text-emphasis-color);
+    color: var(--new-accent-color);
     transition: ease-in-out 500ms;
 }
 
 .highlight:hover {
-    color: wheat;
+    color: var(--new-accent-color);
 }
 
 iframe {
-    background-color: var(--background-color);
+    border: 0.005em solid white;
     border-radius: 12px;
 }

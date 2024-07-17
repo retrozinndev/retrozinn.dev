@@ -1,0 +1,40 @@
+---
+import "../styles/_colors.css";
+
+interface Props {
+    href: string;
+}
+
+const { href } = Astro.props;
+---
+
+<a class="link-button" href={ href }>
+    <slot />
+</a>
+
+<style>
+
+    a {
+        display: inline-flex;
+        margin-inline: 8px;
+        font-size: normal;
+        font-weight: 600;
+        width: fit-content;
+        box-sizing: content-box;
+        color: white;
+        
+        border: solid 0.032em var(--new-accent-color);
+        padding: 2px 8px;
+        border-radius: 12px;
+        text-decoration: none;
+        -webkit-tap-highlight-color: transparent;
+        transition: 150ms linear;
+    }
+
+    a:hover {
+        color: var(--new-accent-color);
+        background-color: var(--new-darker-background-color);
+    }
+</style>
+
+

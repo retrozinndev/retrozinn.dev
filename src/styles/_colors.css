@@ -1,6 +1,10 @@
 
 :root {
     --navbar-color: rgb(47, 49, 54);
+    --new-background-color: #1c1c15;
+    --new-darker-background-color: #5c5c16;
+    --new-accent-color: #e0c82b;
+    --new-darker-accent-color: #ad9c2a;
     --background-color: #1e1e1f;
     --primary-color: #3a4750;
     --secondary-color: #343c42;
