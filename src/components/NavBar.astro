@@ -2,7 +2,7 @@
 import { useTranslations } from "../i18n/utils.ts";
 import "../styles/global.css";
 
-const lang = Astro.params.lang;
+const lang = Astro.params.lang || "en";
 const tr = useTranslations(lang as never);
 ---
 
@@ -82,10 +82,10 @@ const tr = useTranslations(lang as never);
         color: white;
         text-decoration: none;
         font-weight: bold;
-        transition: 250ms;
+        transition: 250ms linear;
     }
 
     a:hover {
-        color: var(--link-color);
+        color: var(--new-accent-color);
     }
 </style>

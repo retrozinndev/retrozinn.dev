@@ -1,31 +1,25 @@
 ---
 import { useTranslations } from "../i18n/utils";
+import "../styles/_colors.css";
 
 const tr = useTranslations(Astro.params.lang as never);
 ---
 
 <footer class="footer">
-    <div class="container">
-        { tr("footer.txt1") } &hearts; { tr("footer.txt2") }
-         · <a href="https://github.com/retrozinndev/retrozinndev.github.io">{ tr("footer.txt3") }</a>
-    </div>
+    { tr("footer.txt1") } &hearts; { tr("footer.txt2") }
+     · <a href="https://github.com/retrozinndev/retrozinn.dev">{ tr("footer.txt3") }</a>
 </footer>
 
 <style>
     .footer {
-        margin-left: 0px;
         color: lightgray;
         overflow: hidden;
         display: block;
         width: 100%;
         font-family: Free Sans, Open Sans, Segoe UI Alternative, Segoe UI, sans-serif;
-        font-size: 12.8px;
+        font-size: 13px;
         text-align: center;
-    }
-
-    .container {
-        width: auto;
-        padding: 10px;
+        padding-block: 10px;
     }
 
     a {
@@ -34,6 +28,6 @@ const tr = useTranslations(Astro.params.lang as never);
     }
 
     a:hover {
-        color: rgb(91, 91, 185);
+        color: var(--new-accent-color);
     }
 </style>

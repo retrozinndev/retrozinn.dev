@@ -6,13 +6,12 @@ import "../styles/global.css";
 interface Props {
     title: string;
     icon: string;
-    lang: string;
 }
-const { title, icon, lang } = Astro.props;
+const { title, icon } = Astro.props;
 ---
 
 <!doctype html>
-<html lang={ lang }>
+<html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,8 +19,8 @@ const { title, icon, lang } = Astro.props;
         <link rel="icon" href={ icon }>
     </head>
     <NavBar />
-
-    <slot />
-
+    <body class="dark">
+        <slot />
+    </body>
     <Footer />
 </html>

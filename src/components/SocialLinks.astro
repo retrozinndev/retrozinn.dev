@@ -1,38 +1,42 @@
 ---
-// Discord User Widget by vendicated (https://widgets.vendicated.dev/)
+// Discord User Widget by vendicated (https://vendicated.dev/)
+import LinkButton from "./LinkButton.astro";
 ---
 
-<iframe
-    title="Discord user embed"
-    width="340"
-    height=120
-    frameborder="0"
-    src="https://widgets.vendicated.dev/user?id=568589231954591749&theme=dark&banner=true&full-banner=false&rounded-corners=false&discord-icon=true&badges=false&guess-nitro=false&background-color=%231b1b28&foreground-color=%23ffffff" />
+<iframe class="discord-embed"
+        style="margin-left: 2px;"
+        title="Discord user embed"
+        width="340"
+        height="120"
+        sandbox="allow-scripts"
+        frameborder=0
+        src="https://widgets.vendicated.dev/user?id=568589231954591749&theme=dark&banner=true&full-banner=false&rounded-corners=false&discord-icon=true&badges=false&guess-nitro=true&background-color=%231b1b28&foreground-color=%23fff" 
+ />
 
 <ul class="stylish-list">
     <li>
-        <img src="/icons/discord.svg" draggable="false"> Discord <a href="https://discord.com/users/568589231954591749">retrozinndev</a>
+        <img src="/icons/discord.svg" draggable="false"> Discord <LinkButton href="https://discord.com/users/568589231954591749">retrozinndev</LinkButton>
     </li>
     <li>
-        <img class="no-brightness" src="/icons/github.svg" draggable="false"> GitHub <a href="https://github.com/retrozinndev">retrozinndev</a>
+        <img class="no-brightness" src="/icons/github.svg" draggable="false"> GitHub <LinkButton href="https://github.com/retrozinndev">retrozinndev</LinkButton>
     </li>
     <li>
-        <img src="/icons/gitlab.svg" draggable="false"> GitLab <a href="https://gitlab.com/retrozinndev">retrozinndev</a>
+        <img src="/icons/gitlab.svg" draggable="false"> GitLab <LinkButton href="https://gitlab.com/retrozinndev">retrozinndev</LinkButton>
     </li>
     <li>
-        <img class="no-brightness" src="/icons/codeberg.svg" draggable="false"> CodeBerg<a href="https://codeberg.org/retrozinndev">retrozinndev</a>
+        <img class="no-brightness" src="/icons/codeberg.svg" draggable="false"> CodeBerg <LinkButton href="https://codeberg.org/retrozinndev">retrozinndev</LinkButton>
     </li>
     <li>
-        <img class="no-brightness" src="/icons/x.svg" draggable="false"> X/Twitter <a href="https://x.com/retrozinndev">@retrozinndev</a>
+        <img class="no-brightness" src="/icons/x.svg" draggable="false"> X/Twitter <LinkButton href="https://x.com/retrozinndev">@retrozinndev</LinkButton>
     </li>
     <li>
-        <img src="/icons/matrix.svg" draggable="false"> Matrix <a href="https://matrix.to/#/@retrozinndev:matrix.org">@retrozinndev:matrix.org</a>
+        <img src="/icons/matrix.svg" draggable="false"> Matrix <LinkButton href="https://matrix.to/#/@retrozinndev:matrix.org">@retrozinndev:matrix.org</LinkButton>
     </li>
     <li>
-        <img src="/icons/reddit.svg" draggable="false"> Reddit <a href="https://www.reddit.com/user/Much_Clue7037">Much_Clue7037</a>
+        <img src="/icons/reddit.svg" draggable="false"> Reddit <LinkButton href="https://www.reddit.com/user/Much_Clue7037">Much_Clue7037</LinkButton>
     </li>
     <li>
-        <img src="/icons/mail.svg" draggable="false"> Mail <a href="mailto:joaovodias@gmail.com">retrozinndev@gmail.com</a>
+        <img src="/icons/mail.svg" draggable="false"> Mail <LinkButton href="mailto:joaovodias@gmail.com">retrozinndev@gmail.com</LinkButton>
     </li>
 </ul>
 
@@ -44,7 +48,7 @@
     }
 
     .stylish-list > li {
-        display:flex;
+        display: flex;
         width: fit-content;
         box-sizing: content-box;
         border-radius: 8px;
@@ -55,28 +59,13 @@
         justify-content: center;
     }
 
-    a {
-        margin-left: 6px;
-        text-decoration: none;
-        color: white;
-        border: 1px solid var(--primary-color);
-        border-radius: 12px;
-        background-color: var(--secondary-color);
-        transition: ease-in 200ms;
-        padding: 2px;
-        padding-inline: 4px;
-    }
-
-    a:hover {
-        color: var(--link-color);
-    }
-
     img {
         width: 22px;
         height: 22px;
         border-radius: 4px;
         margin-right: 6px;
     }
+
     img:not(.no-brightness) {
         filter: brightness(80000%);
     }
