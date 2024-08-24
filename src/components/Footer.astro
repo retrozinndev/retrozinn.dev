@@ -2,7 +2,8 @@
 import { useTranslations } from "../i18n/utils";
 import "../styles/_colors.css";
 
-const tr = useTranslations(Astro.params.lang as never);
+const lang = (Astro.params.lang || "en") as never;
+const tr = useTranslations(lang);
 ---
 
 <footer class="footer">
