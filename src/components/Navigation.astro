@@ -36,7 +36,7 @@ const tr = useTranslations(lang as never);
         <select name="Language" id="langSelector">
             {
                 languages.map(l => (
-                    <option value=`${l}`>{i18n[l].language}</option>
+                    <option value=`${l}`>{ i18n[l as keyof typeof i18n]["language" as keyof typeof i18n] }</option>
                 ))
             }
         </select>
@@ -84,7 +84,7 @@ const tr = useTranslations(lang as never);
             languageSelector.value = getLanguageFromURL(new URL(window.location.href));
 
             languageSelector.onchange = (event: Event) => {
-                const newLanguage: EventTarget = event?.target?.value;
+                const newLanguage = event.target?.value;
                 window.location.href = `/${newLanguage}`;
             }
         }
