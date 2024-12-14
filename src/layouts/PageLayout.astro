@@ -1,7 +1,7 @@
 ---
 import Footer from "../components/Footer.astro";
-import NavBar from "../components/NavBar.astro";
-import "../styles/global.css";
+import Navigation from "../components/Navigation.astro";
+import "../styles/global.scss";
 
 interface Props {
     title: string;
@@ -10,7 +10,6 @@ interface Props {
 const { title, icon } = Astro.props;
 ---
 
-<!doctype html>
 <html lang="en">
     <head>
         <meta charset="UTF-8">
@@ -18,9 +17,21 @@ const { title, icon } = Astro.props;
         <title>{ title }</title>
         <link rel="icon" href={ icon }>
     </head>
-    <NavBar />
+
     <body class="dark">
-        <slot />
+        <Navigation />
+
+        <div class="content">
+            <slot />
+        </div>
+        <Footer />
     </body>
-    <Footer />
+
+    <style>
+        
+        .content {
+            padding-inline: 7%;
+        }
+
+    </style>
 </html>

@@ -4,35 +4,34 @@ import { useTranslations }  from "../../i18n/utils.ts";
 import SocialLinks from '../../components/SocialLinks.astro';
 import PageLayout from '../../layouts/PageLayout.astro';
 import LinkButton from "../../components/LinkButton.astro";
-import "../../styles/_colors.css";
+import "../../styles/_colors.scss";
 
 export { getStaticPaths };
 const tr = useTranslations(Astro.params.lang as never);
 ---
 
 <PageLayout title={ "retrozinndev - Home" } icon="https://github.com/retrozinndev.png">
+
     <div class="container">
         <div class="about-section title">
             <h1>{ tr("about.title")  } <span class="highlight">João!</span> </h1>
         </div>
         <div class="about" id="about">
-            { tr("about.description") }
+            <p>{ tr("about.description") }</p>
         </div>
         <br>
         <LinkButton href=`/${Astro.params.lang}/projects`>
-            { tr("about.projects") } &UpperRightArrow;
+            { tr("about.projects") } <i class="nf nf-oct-arrow_up_right"></i>
         </LinkButton>
         <br>
         <div class="socials ul" id="socials">
             <h2>{ tr("about.socials_title") }</h2>
-            <SocialLinks />
+            <SocialLinks showDiscordEmbed={false} />
         </div>
     </div>
 
     <style>
         .container {
-            padding-inline: 6%;
-            width: fit-content;
             font-weight: 500;
         }
 
@@ -43,7 +42,8 @@ const tr = useTranslations(Astro.params.lang as never);
         }
 
         p {
-            line-height: 1.2rem;
+            font-size: 1.05em;
+            line-height: 1.3rem;
         }
 
         h1 {

@@ -1,9 +1,8 @@
 ---
+import ProjectsComponent from "../../components/ProjectsComponent.astro";
 import { getStaticPaths } from "../../i18n/route.ts";
 import { useTranslations } from "../../i18n/utils";
-import ProjectCard from "../../components/ProjectCard.astro";
 import PageLayout from "../../layouts/PageLayout.astro";
-import "../../styles/global.css";
 
 export { getStaticPaths };
 
@@ -11,69 +10,23 @@ const tr = useTranslations(Astro.params.lang as never);
 ---
 
 <PageLayout title="retrozinndev's Projects" icon="https://github.com/retrozinndev.png">
-    <div class="container">
-        <h1>{ tr("projects.title") }</h1>
-        <p>
-            { tr("projects.description") } 
-            <a rel="_blank" href="https://repos.retrozinn.dev">GitHub</a>.
-        </p>
-        <div class="projects">
-                <ProjectCard icon="https://github.com/retrozinndev.png"
-                developer="retrozinndev"
-                title="retrozinn.dev"
-                description={ tr("projects.retrozinndev_website.description") }
-                href="https://github.com/retrozinndev/retrozinn.dev" />
 
-		        <ProjectCard icon="https://github.com/parceiroti.png" 
-                developer="parceiroti" 
-                title="parceiroti.github.io" 
-                description={ tr("projects.parceiroti_website.description") } 
-                href="https://github.com/parceiroti/parceiroti.github.io" />
-
-                <ProjectCard icon="https://github.com/retrozinndev.png" 
-                developer="retrozinndev" 
-                title="UpDateN'Time" 
-                description={ tr("projects.updatentime.description") } 
-                href="https://github.com/retrozinndev/updatentime" />
-
-                <ProjectCard icon="https://github.com/notestudios.png" 
-                developer="notestudios" 
-                title="Note UI" 
-                description={ tr("projects.noteui.description") } 
-                href="https://github.com/notestudios/noteui" />
-
-                <ProjectCard icon="https://github.com/retrozinndev.png" 
-                developer="retrozinndev" 
-                title="JSONutils" 
-                description={ tr("projects.jsonutils.description") } 
-                href="https://github.com/retrozinndev/jsonutils" />
-
-                <ProjectCard icon="https://github.com/notestudios.png" 
-                developer="notestudios" 
-                title="The Traveler" 
-                description={ tr("projects.thetraveler.description") } 
-                href="https://github.com/notestudios/thetraveler" />
-
-                <ProjectCard icon="https://github.com/notestudios.png" 
-                developer="notestudios" 
-                title="Space Shooter" 
-                description={ tr("projects.spaceshooter.description") } 
-                href="https://github.com/notestudios/spaceshooter" />
-        </div>
+    <h1>{ tr("projects.title") }</h1>
+    <p>
+        { tr("projects.description") } 
+        <a rel="_blank" href="https://repos.retrozinn.dev">GitHub</a>.
+    </p>
+    <div class="projects">
+        <ProjectsComponent />
     </div>
 
     <style>
-
-        .container {
-            --padding-inline: 5%;
-            padding: 0 var(--padding-inline);
-            max-width: calc(100% - var(--padding-inline));
-        }
 
         .projects {
             display: flex;
             flex-direction: row;
             flex-wrap: wrap;
+            max-width: 100%;
         }
 
         @media screen and (max-width:700px) {
@@ -84,5 +37,5 @@ const tr = useTranslations(Astro.params.lang as never);
     
     </style>
 
-</OldLayout>
+</PageLayout>
 

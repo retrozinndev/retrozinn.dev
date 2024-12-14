@@ -3,44 +3,57 @@
 import LinkButton from "./LinkButton.astro";
 ---
 
-<iframe class="discord-embed"
-        style="margin-left: 2px;"
-        title="Discord user embed"
-        width="340"
-        height="120"
-        sandbox="allow-scripts"
-        frameborder=0
-        src="https://widgets.vendicated.dev/user?id=568589231954591749&theme=dark&banner=true&full-banner=false&rounded-corners=false&discord-icon=true&badges=false&guess-nitro=true&background-color=%231b1b28&foreground-color=%23fff" 
+<iframe id="discordEmbed"
+    title="Discord"
+    width={340}
+    height={120}
+    sandbox="allow-scripts"
+    frameborder={0}
+    src="https://widgets.vendicated.dev/user?id=568589231954591749&theme=dark&banner=true&full-banner=false&rounded-corners=false&discord-icon=true&badges=false&guess-nitro=false&"
  />
+
+<script>
+    import { getTheme } from "../scripts/theme.ts";
+
+    const discordEmbed = document.getElementById("discordEmbed") as HTMLIFrameElement;
+
+    // Check theme for changes
+    const lastTheme = getTheme();
+    if(lastTheme !== getTheme() && discordEmbed.contentWindow !== null) {
+        // (fortnite)Reload discord embed(thanks Vee! :3)
+        discordEmbed.contentWindow.postMessage({
+            command: "setTheme",
+            theme: `${getTheme}`
+        }, "*");
+    }
+</script>
 
 <ul class="stylish-list">
     <li>
-        <img src="/icons/discord.svg" draggable="false"> Discord <LinkButton href="https://discord.com/users/568589231954591749">retrozinndev</LinkButton>
+        <i class="nf nf-fa-github"></i> GitHub <LinkButton href="https://github.com/retrozinndev">retrozinndev</LinkButton>
     </li>
     <li>
-        <img class="no-brightness" src="/icons/github.svg" draggable="false"> GitHub <LinkButton href="https://github.com/retrozinndev">retrozinndev</LinkButton>
+        <i class="nf nf-fa-gitlab"></i> GitLab <LinkButton href="https://gitlab.com/retrozinndev">retrozinndev</LinkButton>
     </li>
     <li>
-        <img src="/icons/gitlab.svg" draggable="false"> GitLab <LinkButton href="https://gitlab.com/retrozinndev">retrozinndev</LinkButton>
+        <i class="nf nf-linux-codeberg"></i> CodeBerg <LinkButton href="https://codeberg.org/retrozinndev">retrozinndev</LinkButton>
     </li>
     <li>
-        <img class="no-brightness" src="/icons/codeberg.svg" draggable="false"> CodeBerg <LinkButton href="https://codeberg.org/retrozinndev">retrozinndev</LinkButton>
+        <img class="x" src="/icons/x.svg" draggable="false"> X / Twitter <LinkButton href="https://x.com/retrozinndev">@retrozinndev</LinkButton>
     </li>
     <li>
-        <img class="no-brightness" src="/icons/x.svg" draggable="false"> X/Twitter <LinkButton href="https://x.com/retrozinndev">@retrozinndev</LinkButton>
+        <i class="nf nf-md-matrix"></i> Matrix <LinkButton href="https://matrix.to/#/@retrozinndev:matrix.org">@retrozinndev:matrix.org</LinkButton>
     </li>
     <li>
-        <img src="/icons/matrix.svg" draggable="false"> Matrix <LinkButton href="https://matrix.to/#/@retrozinndev:matrix.org">@retrozinndev:matrix.org</LinkButton>
+        <i class="nf nf-fa-reddit"></i> Reddit <LinkButton href="https://www.reddit.com/user/Much_Clue7037">Much_Clue7037</LinkButton>
     </li>
     <li>
-        <img src="/icons/reddit.svg" draggable="false"> Reddit <LinkButton href="https://www.reddit.com/user/Much_Clue7037">Much_Clue7037</LinkButton>
-    </li>
-    <li>
-        <img src="/icons/mail.svg" draggable="false"> Mail <LinkButton href="mailto:joaovodias@gmail.com">retrozinndev@gmail.com</LinkButton>
+        <i class="nf nf-oct-mail"></i> Mail <LinkButton href="mailto:joaovodias@gmail.com">joaovodias@gmail.com</LinkButton>
     </li>
 </ul>
 
 <style>
+
     .stylish-list {
         font-size: 16px;
         padding-left: 12px;
@@ -59,14 +72,10 @@ import LinkButton from "./LinkButton.astro";
         justify-content: center;
     }
 
-    img {
+    i.nf, img.x {
         width: 22px;
-        height: 22px;
-        border-radius: 4px;
+        font-size: 22px;
         margin-right: 6px;
     }
 
-    img:not(.no-brightness) {
-        filter: brightness(80000%);
-    }
 </style>

@@ -1,26 +1,37 @@
 ---
-import PageLayout from "../../layouts/PageLayout.astro";
 import { getStaticPaths } from "../../i18n/route.ts";
-
+import PageLayout from "../../layouts/PageLayout.astro";
+import LinkButton from "../../components/LinkButton.astro";
 
 export { getStaticPaths };
 ---
 
-<PageLayout title="Tech Stack" icon="https://github.com/retrozinndev.png">
-    <div class="container">
-        <h1>Tech Stack</h1>
-        <p>This is my knowlege stack! It contains the technologies that I've learned until today.</p>
+<PageLayout title="retrozinndev - Tech Stack" icon="https://github.com/retrozinndev.png">
+    <h1>Tech Stack</h1>
+    <p>This is my knowlege stack! It contains the technologies that I've learned until today. Not much yet, I know.</p>
 
-        <h2>Languages</h2>
-        <LinkButton href="https://typescriptlang.org">TypeScript</LinkButton>
+    <h2 id="languages">Languages</h2>
+    <LinkButton href="https://openjdk.org"><i class="nf nf-fa-java"></i>Java</LinkButton>
+    <LinkButton href="https://typescriptlang.org"><i class="nf nf-md-language_typescript"></i>TypeScript</LinkButton>
+    <LinkButton href="https://learn.microsoft.com/dotnet/csharp/"><i class="nf nf-md-language_csharp"></i>CSharp</LinkButton>
 
-        <h2>Frameworks/Libraries</h2>
-        <LinkButton></LinkButton>
-    </div>
+    <h2 id="other-languages">Other Technologies</h2>
+    <LinkButton href="https://developer.mozilla.org/docs/Web/HTML"><i class="nf nf-fa-html5"></i>HTML</LinkButton>
+    <LinkButton href="https://developer.mozilla.org/docs/Web/CSS"><i class="nf nf-seti-css"></i>CSS</LinkButton>
+        <LinkButton href="https://astro.build"><i class="nf nf-custom-astro"></i>Astro</LinkButton>
+
+    <h2 id="others">Others</h2>
+
+    <LinkButton href="https://git-scm.com"><i class="nf nf-md-git"></i>Git</LinkButton>
+        <LinkButton href="https://github.com"><i class="nf nf-md-github"></i>GitHub</LinkButton> 
 
     <style>
-        
-        
+
+        i.nf {
+            margin-block: 3px;
+            margin-inline: 3px;
+        }
 
     </style>
+
 </PageLayout>
