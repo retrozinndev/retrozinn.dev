@@ -1,0 +1,50 @@
+---
+import { useTranslations } from "../i18n/utils";
+import ProjectCard from "./ProjectCard.astro";
+
+const tr = useTranslations(Astro.params.lang as never || "en");
+
+---
+
+<ProjectCard icon="https://github.com/retrozinndev.png"
+developer="retrozinndev"
+title="retrozinn.dev"
+description={ tr("projects.retrozinndev_website.description") }
+href="https://github.com/retrozinndev/retrozinn.dev" />
+
+<ProjectCard icon="https://github.com/parceiroti.png" 
+developer="parceiroti" 
+title="parceiroti.github.io" 
+description={ tr("projects.parceiroti_website.description") } 
+href="https://github.com/parceiroti/parceiroti.github.io" />
+
+<ProjectCard icon="https://github.com/retrozinndev.png" 
+developer="retrozinndev" 
+title="UpDateN'Time" 
+description={ tr("projects.updatentime.description") } 
+href="https://github.com/retrozinndev/updatentime" />
+
+<ProjectCard icon="https://github.com/notestudios.png" 
+developer="notestudios" 
+title="Note UI" 
+description={ tr("projects.noteui.description") } 
+href="https://github.com/notestudios/noteui" />
+
+<ProjectCard icon="https://github.com/retrozinndev.png" 
+developer="retrozinndev" 
+title="JSONutils" 
+description={ tr("projects.jsonutils.description") } 
+href="https://github.com/retrozinndev/jsonutils" />
+
+<ProjectCard icon="https://github.com/notestudios.png" 
+developer="notestudios" 
+title="The Traveler" 
+description={ tr("projects.thetraveler.description") } 
+href="https://github.com/notestudios/thetraveler" />
+
+<ProjectCard icon="https://github.com/notestudios.png" 
+developer="notestudios" 
+title="Space Shooter" 
+description={ tr("projects.spaceshooter.description") } 
+href="https://github.com/notestudios/spaceshooter" />
+

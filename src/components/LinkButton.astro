@@ -1,6 +1,4 @@
 ---
-import "../styles/_colors.css";
-
 interface Props {
     href: string;
 }
@@ -12,7 +10,9 @@ const { href } = Astro.props;
     <slot />
 </a>
 
-<style>
+<style lang="scss">
+
+    @import "../styles/_colors.scss";
 
     a {
         display: inline-flex;
@@ -21,19 +21,24 @@ const { href } = Astro.props;
         font-weight: 600;
         width: fit-content;
         box-sizing: content-box;
-        color: white;
+        color: inherit;
         
-        border: solid 0.032em var(--new-accent-color);
-        padding: 2px 8px;
+        border: solid 0.032em $accent-color;
+        padding: 5px 8px;
         border-radius: 12px;
         text-decoration: none;
         -webkit-tap-highlight-color: transparent;
         transition: 150ms linear;
     }
 
-    a:hover {
-        color: var(--new-accent-color);
-        background-color: var(--new-darker-background-color);
+    body.dark a:hover {
+        color: white;
+        background-color: $accent-color-dark;
+    }
+
+    body.light a:hover {
+        color: black;
+        background-color: $accent-color;
     }
 </style>
 

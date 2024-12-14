@@ -1,0 +1,121 @@
+---
+import PageLayout from "../layouts/PageLayout.astro";
+
+const shots: Array<string> = {
+    
+};
+---
+
+<PageLayout title="João's Hyprland Dots" icon="https://github.com/retrozinndev.png">
+
+    <div class="content top">
+        <h1>Retrozinn's Hyprland Dots</h1>
+        <p>My personal customization for <b>Hyprland</b>.</p>
+        <img src="https://github.com/retrozinndev/Hyprland-Dots/blob/ryo/repo/screenshot_tools.png?raw=true" width="60%" alt="Hyprland Dots Screenshot">
+
+        <span class="author">Made with <i>Care</i>, by <a href="https://github.com/retrozinndev">retrozinndev</a></span>
+    </div>
+
+    <ul class="content">
+        <li class="right">
+            <img src="https://github.com/retrozinndev/Hyprland-Dots/blob/ryo/repo/shots/showoff.png?raw=true" alt="Usage Screenshot">
+
+            <h1>Dynamic colors</h1>
+            <p>These Hyprland dotfiles are compatible with Pywal's Dynamic colors. There's a script that when you change wallpapers, colors will be refreshed and hot-reloaded automaticaly via the script.</p>
+        </li>
+
+        <li class="left">
+            <h1>Tools</h1>
+            <p>For the status bar, Waybar, for notification daemon and control center, it's SwayNC, for Application Launcher and stdin(dmenu-like) I use Anyrun, for the logout, shutdown, restart and lock buttons it's Wlogout, and, for clipboard management, it's used wl-copy, cliphist and Anyrun's menu.</p>
+            <img src="https://github.com/retrozinndev/Hyprland-Dots/blob/ryo/repo/screenshot_usage.png?raw=true" alt="Tools Screenshot">
+        </li>
+    </ul>
+</PageLayout>
+
+<style lang="scss">
+    
+    b {
+        font-weight: 400;
+    }
+
+    img {
+        border-radius: 8px;
+    }
+
+    .content {
+        display: block;
+        padding: 12px;
+    }
+
+    .content > h1, .content > h2, .content > h3 {
+        font-weight: 700;
+    }
+
+    .content.top {
+        background: rgb(20, 16, 20);
+        margin-inline: 6px;
+        border-radius: 12px;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        margin-bottom: 3rem;
+    }
+
+    .content.top > img {
+        margin-block: 1.6em;
+    }
+
+    .content.top > p {
+        font-weight: 300;
+    }
+
+    .author {
+        display: block;
+        font-weight: 600;
+        font-size: 18px;
+    }
+
+    ul.content {
+        width: 100%;
+        height: max-content;
+    }
+
+    ul.content > li {
+        display: block;
+        list-style: none;
+        height: max-content;
+    }
+
+    .content .right, .content .left {
+        display: block;
+
+        padding: 16px 6em;
+        text-align: center;
+    } 
+
+    .content > * > h1 {
+        font-size: 2.5em;
+    }
+
+    .content > * > p {
+        font-size: 1.12em;
+        font-weight: 400;
+    }
+
+    .content > * > img {
+        display: inline-flex;
+        width: 40%;
+        height: 40%;
+    }
+
+    .content > .right img {
+        float: left;
+        margin-right: 12px;
+    } 
+
+    .content > .left > img {
+        float: right;
+        margin-left: 12px;
+    }
+    
+</style>

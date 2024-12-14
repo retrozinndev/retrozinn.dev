@@ -1,7 +1,7 @@
 
 import { languages, i18n, defaultLang } from "./ui.ts";
 
-export function getLanguageFromURL(url: URL): string {
+export function getLanguageFromURL(url: URL): (string|keyof typeof i18n) {
     var splittedURL: string[] = url.pathname.split("/");
     var currentIntl: string = splittedURL[1]; // Gets the second URL part
 

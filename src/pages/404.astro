@@ -1,7 +1,6 @@
 ---
 import { getLanguages, getLanguageFromURL, useTranslations } from "../i18n/utils";
-import "../styles/global.css";
-import NavBar from "../components/NavBar.astro";
+import Navigation from "../components/Navigation.astro";
 
 Astro.params.lang = "en";
 const langs: string[] = getLanguages();
@@ -23,7 +22,7 @@ const tr = useTranslations(Astro.params.lang as never);
     <title>retrozinndev - Not Found!</title>
     <link rel="icon" href="https://github.com/retrozinndev.png" />
 </head>
-<NavBar />
+<Navigation />
 <body>
     <div class="center">
         <div class="not-found">

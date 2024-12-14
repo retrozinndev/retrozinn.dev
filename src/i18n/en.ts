@@ -1,17 +1,20 @@
 export const en = {
-    
+
+    language: "English (United States)",
+
     nav: {
         home: "Home",
         about: "About",
-        projects: "Projects"
+        stack: "Stack",
+        projects: "Projects",
+        language: "Language"
     },
     
     about: {
-        title: "Hi, I'm",
-        description: `I'm a self-taught programmer and tech enthusiast who's learning software 
-            development stuff! I absolutely love making open-source projects! I like: coding, 
-            learning about Linux and making games and apps in my free time!`,
-        socials_title: "You can find me in:",
+        title: "Heyy, I'm",
+        description: `I'm a tech enthusiast who loves GNU/Linux and has passion on learning software 
+            development stuff! You can also call me retrozinn if you want to.`,
+        socials_title: "Some of my socials",
         projects: "Get in touch with my projects"
     },
 
@@ -55,6 +58,10 @@ export const en = {
         txt1: "Made with",
         txt2: "by retrozinndev",
         txt3: "Improve this page"
+    },
+
+    errors: {
+        nf_load_error: "Couldn't load NerdFont"
     }
 
 } as const;

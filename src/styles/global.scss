@@ -1,30 +1,29 @@
 
-@import "_colors.css";
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import "_colors.scss";
+@import "_fonts.scss";
 
 html {
     font-family: Noto Sans, Segoe UI, sans-serif;
     font-weight: 300;
     scroll-behavior: smooth;
-    color-scheme: dark;
-}
-
-.center {
-    width: 100%;
-    text-align: center;
-    display: block;
-    position: absolute;
-    top: 50%;
-    transform: translate(0, -50%);
 }
 
 body {
     overflow-y: scroll;
     overflow-inline: clip;
-    color-scheme: dark;
     color: white;
-    background-color: var(--new-background-color);
-    margin: auto;
+}
+
+body.dark {
+    color-scheme: dark;
+    background-color: $bg-color-dark;
+    color: white;
+}
+
+body.light {
+    color-scheme: light;
+    background-color: $bg-color-light;
+    color: black;
 }
 
 h1 {
@@ -39,16 +38,25 @@ h3 {
     font-size: 18px;
 }
 
+.center {
+    width: 100%;
+    text-align: center;
+    display: block;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+
 .highlight {
     position: flex;
     font-style: bolder;
     font-weight: bolder;
-    color: var(--new-accent-color);
+    color: $accent-color;
     transition: ease-in-out 500ms;
 }
 
 .highlight:hover {
-    color: var(--new-accent-color);
+    color: $accent-color;
 }
 
 iframe {

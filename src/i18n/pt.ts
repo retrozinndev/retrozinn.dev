@@ -1,18 +1,21 @@
 export const pt = {
 
+    language: "Português (Brasil)",
+
     nav: {
         home: "Início",
         about: "Sobre mim",
-        projects: "Projetos"
+        stack: "Conhecimento",
+        projects: "Projetos",
+        language: "Idioma"
     },
     
     about: {
         title: "Olá, sou o",
-        description: `Sou um programador autodidata e entusiasta de tecnologia que está amando o 
-        mundo da programação! Eu gosto muito de fazer projetos open-source! Eu curto: programar, 
-        aprender sobre GNU/Linux, fazer jogos e aplicativos no meu tempo livre!`,
-        socials_title: "Você pode me encontrar em:",
-        projects: "Veja os meus projetos"
+        description: `Eu curto tecnologia, GNU/Linux e também gosto de aprender como desenvolver 
+            coisas! Você também pode me chamar de Retrozinn, se quiser.`,
+        socials_title: "Minhas redes",
+        projects: "Veja alguns dos meus projetos"
     },
 
     404: {

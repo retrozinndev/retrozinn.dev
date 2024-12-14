@@ -1,18 +1,20 @@
 ---
 import { useTranslations } from "../i18n/utils";
-import "../styles/_colors.css";
 
-const tr = useTranslations(Astro.params.lang as never);
+const lang = (Astro.params.lang || "en") as never;
+const tr = useTranslations(lang);
 ---
 
 <footer class="footer">
-    { tr("footer.txt1") } &hearts; { tr("footer.txt2") }
+    { tr("footer.txt1") } <i class="nf nf-fa-heart"></i> { tr("footer.txt2") }
      · <a href="https://github.com/retrozinndev/retrozinn.dev">{ tr("footer.txt3") }</a>
 </footer>
 
-<style>
+<style lang="scss">
+
+    @import "../styles/_colors.scss";
+
     .footer {
-        color: lightgray;
         overflow: hidden;
         display: block;
         width: 100%;
@@ -20,14 +22,23 @@ const tr = useTranslations(Astro.params.lang as never);
         font-size: 13px;
         text-align: center;
         padding-block: 10px;
-    }
+    } 
 
-    a {
+    body.dark a,
+    body.dark .footer {
         color: lightgray;
-        transition: 250ms;
     }
 
-    a:hover {
-        color: var(--new-accent-color);
+    body.light a,
+    body.light .footer {
+        color: gray;
+    }
+
+    body.dark a:hover {
+        color: $accent-color;
+    }
+
+    body.light a:hover {
+        color: $accent-color-dark;
     }
 </style>
