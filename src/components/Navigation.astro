@@ -30,7 +30,7 @@ const tr = useTranslations(lang as never);
                 ))
             }
             <li class="action">
-                <a href="#" id="nav-toggle-theme"><i id="nav-theme-icon" class="nf nf-oct-sun"></i></a>
+                <a href="#" id="nav-toggle-theme"><span id="nav-theme-icon" class="nf nf-oct-sun"></span></a>
             </li>
         </ul>
         <select name="Language" id="langSelector">
@@ -48,10 +48,10 @@ const tr = useTranslations(lang as never);
     import { getStoredTheme, getThemes, applyTheme, getTheme, toggleTheme } from "../scripts/theme.ts";
     import { getLanguageFromURL } from "../i18n/utils.ts";
 
-    const navigation = document.getElementById("navbar");
-    const toggleThemeButton = document.getElementById("nav-toggle-theme");
-    const toggleThemeIcon = document.getElementById("nav-theme-icon");
-    const languageSelector = document?.getElementById("langSelector");
+    const navigation = document.getElementById("navbar") as HTMLDivElement;
+    const toggleThemeButton = document.getElementById("nav-toggle-theme") as HTMLLinkElement;
+    const toggleThemeIcon = document.getElementById("nav-theme-icon") as HTMLSpanElement;
+    const languageSelector = document?.getElementById("langSelector") as HTMLSelectElement;
 
     window.onscroll = () => {
         if(navigation) {
@@ -63,7 +63,7 @@ const tr = useTranslations(lang as never);
         } 
     };
 
-    if(toggleThemeButton != undefined && toggleThemeIcon != undefined) {
+    if(toggleThemeButton && toggleThemeIcon) {
         toggleThemeButton.onclick = () => {
             toggleTheme();
             applyTheme(getTheme());
@@ -75,21 +75,23 @@ const tr = useTranslations(lang as never);
 
         if (getTheme() == "dark")
             toggleThemeIcon.className = "nf nf-oct-sun";
-        else  
+        else 
             toggleThemeIcon.className = "nf nf-oct-moon";
     }
 
     window.onload = () => {
-        if(languageSelector != undefined) {
+        applyTheme(getStoredTheme() || getThemes()[0]);
+
+        if(languageSelector) {
             languageSelector.value = getLanguageFromURL(new URL(window.location.href));
 
             languageSelector.onchange = (event: Event) => {
-                const newLanguage = event.target?.value;
+                const eventTarget = event.target as HTMLSelectElement, 
+                newLanguage = eventTarget?.value as string;
+
                 window.location.href = `/${newLanguage}`;
             }
         }
-
-        applyTheme(getStoredTheme() || getThemes()[0]);
     }
 
 </script>
