@@ -1,6 +1,6 @@
 
-@import "_colors.scss";
-@import "_fonts.scss";
+@use "_colors.scss";
+@use "_fonts.scss";
 
 html {
     font-family: Noto Sans, Segoe UI, sans-serif;
@@ -16,13 +16,13 @@ body {
 
 body.dark {
     color-scheme: dark;
-    background-color: $bg-color-dark;
+    background-color: colors.$bg-color-dark;
     color: white;
 }
 
 body.light {
     color-scheme: light;
-    background-color: $bg-color-light;
+    background-color: colors.$bg-color-light;
     color: black;
 }
 
@@ -51,12 +51,12 @@ h3 {
     position: flex;
     font-style: bolder;
     font-weight: bolder;
-    color: $accent-color;
+    color: colors.$accent-color;
     transition: ease-in-out 500ms;
 }
 
 .highlight:hover {
-    color: $accent-color;
+    color: colors.$accent-color;
 }
 
 iframe {

@@ -39,7 +39,7 @@ import LinkButton from "./LinkButton.astro";
         <i class="nf nf-linux-codeberg"></i> CodeBerg <LinkButton href="https://codeberg.org/retrozinndev">retrozinndev</LinkButton>
     </li>
     <li>
-        <img class="x" src="/icons/x.svg" draggable="false"> X / Twitter <LinkButton href="https://x.com/retrozinndev">@retrozinndev</LinkButton>
+        <img class="icon x" src="/icons/x.svg" draggable="false"> X / Twitter <LinkButton href="https://x.com/retrozinndev">@retrozinndev</LinkButton>
     </li>
     <li>
         <i class="nf nf-md-matrix"></i> Matrix <LinkButton href="https://matrix.to/#/@retrozinndev:matrix.org">@retrozinndev:matrix.org</LinkButton>
@@ -72,10 +72,14 @@ import LinkButton from "./LinkButton.astro";
         justify-content: center;
     }
 
-    i.nf, img.x {
+    i.nf, img.icon {
         width: 22px;
         font-size: 22px;
         margin-right: 6px;
+    }
+
+    body.light img.icon.x {
+        filter: brightness(0%);
     }
 
 </style>
