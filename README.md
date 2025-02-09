@@ -1,3 +1,11 @@
+# Retrozinn's Website ([retrozinn.dev](https://retrozinn.dev))
+[![Netlify Status](https://api.netlify.com/api/v1/badges/8754cf85-e75f-495c-8818-011d76157362/deploy-status)](https://app.netlify.com/sites/retrozinndev/deploys)
+
+> [!warning]
+> I'm going to move from GitHub Pages to Netlify soon, expect some outage.
+
+This is my website repo!
+
 # Astro Starter Kit: Basics
 
 ```sh
