@@ -70,7 +70,7 @@ export async function getRepositories(username: string = "retrozinndev", options
         if(options.filterForks && repo.fork)
             return false;
 
-        if(options.filterSpecialRepo && repo.name === repo.owner.login)
+        if(options.filterSpecialRepo && (repo.name === repo.owner.login || repo.name === ".github"))
             return false;
 
         if(options.filterArchived && repo.archived)

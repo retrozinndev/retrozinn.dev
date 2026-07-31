@@ -13,7 +13,7 @@ const tr = useTranslations(Astro.params.lang ?? "en");
         <h1>{tr("about.title")}</h1>
         <p>{tr("about.description")}</p>
 
-        <h2>{tr("about.journey.title")}</h1>
+        <h2>{tr("about.journey.title")}</h2>
         <p>{tr("about.journey.p1")}</p>
         <p set:html={
            format(tr("about.journey.p2"), 

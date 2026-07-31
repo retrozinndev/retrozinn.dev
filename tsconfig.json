@@ -5,5 +5,8 @@
     "module": "es2022",
     "jsx": "react-jsx",
     "jsxImportSource": "react"
-  }
+  },
+  "include": [
+    "./worker-configuration.d.ts"
+  ]
 }
