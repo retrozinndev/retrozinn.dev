@@ -42,13 +42,13 @@ export async function getRepositories(username: string = "retrozinndev", options
     try {
         result = await fetch(
             `https://api.github.com/users/${username}/repos`, {
-                cache: "reload",
                 method: "GET",
                 headers: options.token !== undefined ? {
                     "Authorization": options.token
                 } : undefined
             }
         );
+        console.log(result);
     } catch(e) {
         throw new Error(`fetch rejected for repo list: ${(e as Error).message}`);
     }
