@@ -9,6 +9,7 @@ import cloudflare from "@astrojs/cloudflare";
 export default defineConfig({
   site: "https://retrozinn.dev",
   base: ".",
+  output: "server",
 
   integrations: [
       react()

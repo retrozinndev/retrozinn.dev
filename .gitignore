@@ -10,6 +10,7 @@ node_modules/
 
 # Ignore package-lock
 pnpm-lock.yaml
+pnpm-workspace.yaml
 
 # logs
 npm-debug.log*
