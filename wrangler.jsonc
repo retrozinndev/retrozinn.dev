@@ -10,6 +10,9 @@
 		"directory": "./dist",
 		"binding": "ASSETS"
 	},
+        "secrets": {
+            "required": ["GITHUB_TOKEN"]
+        },
 	"observability": {
 		"enabled": true
 	}

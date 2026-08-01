@@ -39,16 +39,20 @@ export async function getRepositories(username: string = "retrozinndev", options
     options.filterArchived ??= false;
     options.orderByMostStarred ??= false;
 
+    const headers: HeadersInit = {
+        "User-Agent": "retrozinn.dev"
+    };
+
+    if(options.token != null)
+        headers["Authorization"] = `Bearer ${options.token}`;
+
     try {
         result = await fetch(
             `https://api.github.com/users/${username}/repos`, {
                 method: "GET",
-                headers: options.token !== undefined ? {
-                    "Authorization": options.token
-                } : undefined
+                headers
             }
         );
-        console.log(result);
     } catch(e) {
         throw new Error(`fetch rejected for repo list: ${(e as Error).message}`);
     }

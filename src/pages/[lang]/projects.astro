@@ -1,27 +1,33 @@
 ---
-export { getStaticPaths } from "../../i18n/route.ts";
-
 import ProjectsComponent from "../../components/ProjectsComponent.astro";
 import PageLayout from "../../layouts/PageLayout.astro";
+import LinkButton from "../../components/LinkButton.astro";
 import { useTranslations } from "../../i18n/utils";
-import { getRepositories } from "../../scripts/repos";
+import { getRepositories, type Repository } from "../../scripts/repos";
+import { env } from "cloudflare:workers";
 
 
 const tr = useTranslations(Astro.params.lang as never);
-const repos = await getRepositories(undefined, {
-    filterArchived: true,
-    orderByMostStarred: true
-});
+let repos: Array<Repository>|undefined;
+try {
+    repos = await getRepositories(undefined, {
+        token: env.GITHUB_TOKEN,
+        filterArchived: true,
+        orderByMostStarred: true
+    });
+} catch(e) {
+    console.error("Failed to fetch projects:", e);
+}
 ---
 
-<PageLayout title="retrozinndev's Projects" maxWidth="90em">
+<PageLayout title="Projects" maxWidth="90em">
     <h1>{ tr("projects.title") }</h1>
     <p>
         { tr("projects.description") } 
-        <a rel="_blank" href="https://github.com/retrozinndev?tab=repositories">GitHub</a>.
+        <LinkButton href="https://github.com/retrozinndev?tab=repositories" spacing={false} external>GitHub</LinkButton>
     </p>
     <div class="projects">
-        <ProjectsComponent projects={repos} />
+        {repos && <ProjectsComponent projects={repos} />}
     </div>
 
     <style>

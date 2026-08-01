@@ -3,8 +3,6 @@ import LinkButton from "../../components/LinkButton.astro";
 import { useTranslations, format } from "../../i18n/utils";
 import PageLayout from "../../layouts/PageLayout.astro";
 
-export { getStaticPaths } from "../../i18n/route";
-
 const tr = useTranslations(Astro.params.lang ?? "en");
 ---
 

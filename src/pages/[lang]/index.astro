@@ -5,20 +5,25 @@ import PageLayout from '../../layouts/PageLayout.astro';
 import SocialLinks from "../../components/SocialLinks.astro";
 import LinkButton from "../../components/LinkButton.astro";
 import ProjectsComponent from "../../components/ProjectsComponent.astro";
-import { getRepositories } from "../../scripts/repos";
+import { getRepositories, type Repository } from "../../scripts/repos";
 import DiscordEmbed from "../../components/DiscordEmbed.astro";
-
-export { getStaticPaths } from "../../i18n/route";
-
+import { env } from "cloudflare:workers";
 
 const tr = useTranslations(Astro.params.lang as never);
-const highlightProjects = (await getRepositories(undefined, {
-    filterArchived: true,
-    orderByMostStarred: true
-})).reverse().splice(0, 6); // show the first 6 projects
+let highlightProjects: Array<Repository>|undefined;
+
+try {
+    highlightProjects = (await getRepositories(undefined, {
+        token: env.GITHUB_TOKEN,
+        filterArchived: true,
+        orderByMostStarred: true
+    })).reverse().splice(0, 6); // show the first 6 projects
+} catch(e) {
+    console.error("Failed to fetch projects:", e);
+}
 ---
 
-<PageLayout title={"retrozinndev | Home"} navSpacing="4em" sideSpacing="4px" flex sideSpacing="8px" 
+<PageLayout title="Home" navSpacing="4em" sideSpacing="4px" flex sideSpacing="8px" 
   pfpOnNavigation={false} maxWidth="100em">
 
     <div class="block">
@@ -49,10 +54,13 @@ const highlightProjects = (await getRepositories(undefined, {
             <h1>{ tr("projects.title") }</h1>
             <p>
                 { tr("projects.description") } 
-                <LinkButton href="https://github.com/retrozinndev?tab=repositories" external={true} spacing={false}>GitHub</LinkButton>
+                <LinkButton href="https://github.com/retrozinndev?tab=repositories"
+                  external={true} spacing={false}>
+                    GitHub
+                </LinkButton>
             </p>
             <div class="projects">
-                <ProjectsComponent projects={highlightProjects} />
+                {highlightProjects && <ProjectsComponent projects={highlightProjects} />}
             </div>
         </div>
     </div>
