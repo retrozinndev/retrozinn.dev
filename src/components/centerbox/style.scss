@@ -1,0 +1,32 @@
+
+div.centerboxcomponent {
+  display: flex;
+  flex-direction: row;
+
+  & > *:nth-child(1) {
+    display: flex;
+    flex: 1 0;
+    justify-content: start;
+  }
+  &.middle-rules > *:nth-child(1) {
+    flex: 0 1 content;
+  }
+
+  & > *:nth-child(2) {
+    display: flex;
+    flex: 1 1 content;
+    justify-content: center;
+  }
+  &.middle-rules > *:nth-child(2) { // if middle rules...
+    width: 100%;
+  }
+
+  & > *:nth-child(3) {
+    display: flex;
+    flex: 1 0;
+    justify-content: end;
+  }
+  &.middle-rules > *:nth-child(3) {
+    flex: 0 1 content;
+  }
+}

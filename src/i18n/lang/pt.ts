@@ -1,7 +1,7 @@
 import type { i18nStruct } from "../struct";
 
 export default {
-    language: "Português (Brasil)",
+    language: "br",
 
     nav: {
         home: "Início",

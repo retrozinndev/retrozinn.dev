@@ -1,0 +1,104 @@
+@use "sass:color";
+@use "../../styles/colors";
+
+$margin: 6px;
+$padding: 16px;
+$radius: 24px;
+
+.navigation {
+  position: sticky;
+  align-items: center;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  gap: 6px;
+  padding: $padding;
+  border-radius: $radius;
+  margin: $margin;
+  margin-top: calc($margin / 2);
+  top: calc($margin * 2);
+  margin-bottom: 4em;
+  z-index: 1;
+  transition: 120ms ease-in background;
+
+  & #start {
+    gap: 6px;
+    align-items: center;
+    font-weight: 800;
+    font-size: large;
+    transition: 120ms ease-in color;
+
+    & a.name {
+      font-family: var(--font-cherry);
+      text-decoration: none;
+
+      & .tld {
+        //font-family: var(--font-fredoka);
+      }
+    }
+  }
+
+  & #end {
+    gap: 6px;
+    align-items: center;
+  }
+
+  & .avatar {
+    border-radius: calc($radius - $padding);
+  }
+
+  &.scrolled {
+    background: oklch(from colors.$bg-navbar-color-dark l c h / .8);
+    backdrop-filter: blur(40px);
+  }
+}
+
+.navigation > nav {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  font-family: var(--font-fredoka);
+  gap: 18px;
+  font-weight: 300;
+  font-size: 1.1em;
+
+  & > a.item {
+    transition: 200ms ease-in-out;
+    transition-property: text-decoration-color, color;
+    text-decoration: underline 2px solid transparent;
+
+    &:hover {
+      text-decoration-color: inherit;
+      cursor: pointer;
+    }
+  }
+}
+
+body {
+  &.light .navigation.scrolled {
+    background: color.scale($color: colors.$bg-navbar-color-light, $alpha: -20%);
+    box-shadow: 0 0 5px 2px rgba($color: darkgray, $alpha: .6);
+  }
+
+  &.dark .navigation.scrolled {
+    box-shadow: 0 0 25px 2px rgba($color: black, $alpha: .6);
+  }
+}
+
+@media screen and (max-width: 620px) {
+  .navigation {
+    display: flex;
+    flex-direction: column !important;
+    row-gap: 10px;
+
+    & #start {
+      display: none;
+    }
+
+    & #end {
+      flex-wrap: nowrap;
+      gap: 24px;
+    }
+  }
+}

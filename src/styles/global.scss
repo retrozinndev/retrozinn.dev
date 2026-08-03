@@ -1,11 +1,10 @@
 @use "sass:color";
-@use "./fonts";
 @use "./colors";
 
 html {
-    font-family: Noto Sans, Segoe UI, sans-serif;
-    font-weight: 300;
-    scroll-behavior: smooth;
+  font-family: var(--font-fredoka);
+  font-style: normal;
+  scroll-behavior: smooth;
 
   .dark {
     color-scheme: dark;
@@ -35,24 +34,29 @@ body {
   color: white;
 
   & a {
-    all: unset;
     transition: 120ms ease-in;
     cursor: pointer;
     text-decoration: underline;
     font-weight: 600;
+    color: inherit;
   }
 }
 
 h1 {
-    font-size: 32.5px;
+    font-size: 2.4em;
+    font-weight: 600;
 }
 
 h2 {
-    font-size: 22px;
+    font-size: 1.9em;
 }
 
 h3 {
-    font-size: 18px;
+    font-size: 1.4em;
+}
+
+p {
+  font-size: 1em;
 }
 
 .center {
@@ -62,6 +66,10 @@ h3 {
     position: absolute;
     top: 50%;
     transform: translate(0, -50%);
+}
+
+span.cute {
+  font-family: var(--font-cherry);
 }
 
 span.highlight {

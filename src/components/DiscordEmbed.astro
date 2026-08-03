@@ -17,9 +17,10 @@ const {
     <iframe
       title="Discord user embed"
       id="discordEmbed"
-      width="340"
+      width="300"
       height="120"
       sandbox="allow-scripts"
+      style="overflow: hidden"
       data-user-id={userId}
       data-initial-theme={initialTheme}
     />
@@ -38,7 +39,7 @@ const {
             &banner=true
             &full-banner=false
             &rounded-corners=false
-            &discord-icon=true
+            &discord-icon=false
             &badges=false
             &guess-nitro=false
         `.replace(/ |\n/g, ""));
